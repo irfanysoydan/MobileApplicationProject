@@ -9,7 +9,7 @@
     tools:layout_editor_absoluteY="-82dp">
 
     <Button
-        android:id="@+id/btn_register_register"
+        android:id="@+id/register_btn_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kayıt Ol"
@@ -57,14 +57,14 @@
         tools:layout_editor_absoluteY="144dp" />
 
     <Button
-        android:id="@+id/btn_register_back"
+        android:id="@+id/register_btn_back"
         android:layout_width="32dp"
         android:layout_height="37dp"
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="64dp" />
 
     <EditText
-        android:id="@+id/txt_register_name"
+        android:id="@+id/register_txt_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -74,7 +74,7 @@
         tools:layout_editor_absoluteY="190dp" />
 
     <EditText
-        android:id="@+id/txt_register_email"
+        android:id="@+id/register_txt_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -84,7 +84,7 @@
         tools:layout_editor_absoluteY="261dp" />
 
     <EditText
-        android:id="@+id/txt_register_password"
+        android:id="@+id/register_txt_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -94,7 +94,7 @@
         tools:layout_editor_absoluteY="344dp" />
 
     <EditText
-        android:id="@+id/txt_register_password2"
+        android:id="@+id/register_txt_password2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"

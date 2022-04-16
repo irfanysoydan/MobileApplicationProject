@@ -7,7 +7,7 @@
     tools:context=".LandingActivity">
 
     <Button
-        android:id="@+id/btn_landing_login"
+        android:id="@+id/landing_btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Giris Yap"
@@ -31,7 +31,7 @@
         tools:layout_editor_absoluteY="242dp" />
 
     <Button
-        android:id="@+id/btn_landing_register"
+        android:id="@+id/landing_btn_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Üye Ol"
