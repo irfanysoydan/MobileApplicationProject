@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-82dp">
+
+    <Button
+        android:id="@+id/btn_register_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kayıt Ol"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="553dp" />
+
+    <TextView
+        android:id="@+id/txt_register_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giris Yap"
+        tools:layout_editor_absoluteX="255dp"
+        tools:layout_editor_absoluteY="634dp" />
+
+    <TextView
+        android:id="@+id/txt_register_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hesabın var mı?"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="634dp" />
+
+    <TextView
+        android:id="@+id/txt_register_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Veri Politikası CArt Curt"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="514dp" />
+
+    <TextView
+        android:id="@+id/txt_register1"
+        android:layout_width="107dp"
+        android:layout_height="20dp"
+        android:text="Tekrar Hoşgeldin"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="90dp" />
+
+    <TextView
+        android:id="@+id/txt_register2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hesabına Giriş Yap"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="144dp" />
+
+    <Button
+        android:id="@+id/btn_register_back"
+        android:layout_width="32dp"
+        android:layout_height="37dp"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="64dp" />
+
+    <EditText
+        android:id="@+id/txt_register_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Ad Soyad"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="190dp" />
+
+    <EditText
+        android:id="@+id/txt_register_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="E-Posta"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="261dp" />
+
+    <EditText
+        android:id="@+id/txt_register_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Şifre"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="344dp" />
+
+    <EditText
+        android:id="@+id/txt_register_password2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Şifre Doğrula"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="433dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

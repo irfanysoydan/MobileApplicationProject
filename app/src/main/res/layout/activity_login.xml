@@ -14,15 +14,6 @@
         tools:layout_editor_absoluteY="56dp"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <EditText
-        android:id="@+id/txt_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPostalAddress"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="328dp" />
-
     <TextView
         android:id="@+id/txt_login4"
         android:layout_width="wrap_content"
@@ -56,10 +47,10 @@
         tools:layout_editor_absoluteY="431dp" />
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_login_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Giris Yap"
         tools:layout_editor_absoluteX="170dp"
         tools:layout_editor_absoluteY="498dp" />
 
@@ -72,16 +63,17 @@
         tools:layout_editor_absoluteY="442dp" />
 
     <EditText
-        android:id="@+id/txt_password"
+        android:id="@+id/txt_login_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Şifre"
         android:inputType="textPassword"
         tools:layout_editor_absoluteX="100dp"
         tools:layout_editor_absoluteY="383dp" />
 
     <Button
-        android:id="@+id/btn_back"
+        android:id="@+id/btn_login_back"
         android:layout_width="32dp"
         android:layout_height="37dp"
         tools:layout_editor_absoluteX="16dp"
@@ -94,5 +86,15 @@
         android:text="Tekrar Hoşgeldin"
         tools:layout_editor_absoluteX="152dp"
         tools:layout_editor_absoluteY="229dp" />
+
+    <EditText
+        android:id="@+id/txt_login_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="E-Posta"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="332dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
