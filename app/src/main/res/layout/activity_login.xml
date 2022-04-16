@@ -27,7 +27,7 @@
         android:id="@+id/txt_login4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Hesabın yok mu?"
         tools:layout_editor_absoluteX="112dp"
         tools:layout_editor_absoluteY="579dp" />
 
@@ -35,7 +35,7 @@
         android:id="@+id/txt_login5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Kayıt ol"
         tools:layout_editor_absoluteX="256dp"
         tools:layout_editor_absoluteY="579dp" />
 
@@ -48,12 +48,12 @@
         tools:layout_editor_absoluteY="271dp" />
 
     <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CheckBox"
+        android:id="@+id/checbox_remember"
+        android:layout_width="76dp"
+        android:layout_height="53dp"
+        android:text="Beni Hatırla"
         tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="436dp" />
+        tools:layout_editor_absoluteY="431dp" />
 
     <Button
         android:id="@+id/btn_login"
@@ -67,12 +67,12 @@
         android:id="@+id/txt_login3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="252dp"
-        tools:layout_editor_absoluteY="450dp" />
+        android:text="Şifreni mi unuttun?"
+        tools:layout_editor_absoluteX="193dp"
+        tools:layout_editor_absoluteY="442dp" />
 
     <EditText
-        android:id="@+id/checkbox_remember"
+        android:id="@+id/txt_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
