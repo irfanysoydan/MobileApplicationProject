@@ -10,4 +10,6 @@
         android:fontWeight="500"/>
     <font android:fontStyle="normal"
         android:fontWeight="700"/>
+    <font android:fontStyle="normal"
+        android:fontWeight="800"/>
 </font-family>
