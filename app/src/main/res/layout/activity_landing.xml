@@ -6,43 +6,70 @@
     android:layout_height="match_parent"
     tools:context=".LandingActivity">
 
-    <Button
-        android:id="@+id/landing_btn_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Giris Yap"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="341dp" />
-
     <ImageView
         android:id="@+id/imgview_landing"
         android:layout_width="412dp"
-        android:layout_height="213dp"
-        tools:layout_editor_absoluteX="-3dp"
-        tools:layout_editor_absoluteY="0dp"
+        android:layout_height="352dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
         android:id="@+id/txt_landing1"
-        android:layout_width="109dp"
-        android:layout_height="32dp"
-        android:text="Project Name"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="242dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/prime_dark_green"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgview_landing" />
+
+    <Button
+        android:id="@+id/landing_btn_login"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:text="Giris Yap"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_landing1" />
 
     <Button
         android:id="@+id/landing_btn_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="30dp"
         android:text="Üye Ol"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="416dp" />
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/landing_btn_login" />
 
     <TextView
         android:id="@+id/txt_landing2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Veri Politikası CArt Curt"
-        tools:layout_editor_absoluteX="132dp"
-        tools:layout_editor_absoluteY="541dp" />
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="36dp"
+        android:text="@string/app_policy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

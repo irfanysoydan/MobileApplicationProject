@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">MobileApplicationProject</string>
+    <string name="app_name">Application Name</string>
+    <string name="app_welcome">Tekrar Hoşgeldin</string>
+    <string name="app_welcome_sub">Hesabına giriş yap</string>
+    <string name="app_register_sub">Hesap oluştur</string>
+    <string name="app_login">Giriş Yap</string>
+    <string name="app_register">Kayıt Ol</string>
+    <string name="app_email">E-Posta</string>
+    <string name="app_password">Şifre</string>
+    <string name="app_re_password">şifreyi Doğrula</string>
+    <string name="app_full_name">Adın Soyadın</string>
+    <string name="app_does_not_have_account">Hesabın yok mu?</string>
+    <string name="app_does_have_account">Hesabın var mı?</string>
+    <string name="app_remember_me">Beni hatırla</string>
+
+    <string name="app_policy"><b>Kaydolarak</b> , Şartlarımızı, Veri Politikamızı <b>ve</b> Çerez Politikamızı kabul etmiş olursunuz.</string>
 </resources>
