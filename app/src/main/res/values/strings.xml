@@ -13,5 +13,5 @@
     <string name="app_does_have_account">Hesabın var mı?</string>
     <string name="app_remember_me">Beni hatırla</string>
 
-    <string name="app_policy"><b>Kaydolarak</b> , Şartlarımızı, Veri Politikamızı <b>ve</b> Çerez Politikamızı kabul etmiş olursunuz.</string>
+    <string name="app_policy"><font fgcolor="#296541">Kaydolarak</font> , Şartlarımızı, Veri Politikamızı <font fgcolor="#296541">ve</font> Çerez Politikamızı kabul etmiş olursunuz.</string>
 </resources>
