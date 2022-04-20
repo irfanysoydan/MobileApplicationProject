@@ -8,8 +8,9 @@
 
     <ImageView
         android:id="@+id/imgview_landing"
+
         android:layout_width="wrap_content"
-        android:layout_height="55dp"
+        android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"
         android:src="@drawable/img_header_landing"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,9 +54,10 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="18dp"
         android:layout_marginEnd="30dp"
         android:text="@string/app_register"
+        android:textSize="18sp"
         app:cornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

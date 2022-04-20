@@ -1,105 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity"
-    tools:layout_editor_absoluteX="0dp"
-    tools:layout_editor_absoluteY="-82dp">
+    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/register_btn_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kayıt Ol"
-        tools:layout_editor_absoluteX="169dp"
-        tools:layout_editor_absoluteY="553dp" />
 
-    <TextView
-        android:id="@+id/txt_register_5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Giris Yap"
-        tools:layout_editor_absoluteX="255dp"
-        tools:layout_editor_absoluteY="634dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.25">
 
-    <TextView
-        android:id="@+id/txt_register_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hesabın var mı?"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="634dp" />
+        <Button
+            android:id="@+id/register_btn_back"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/backarrow"
+            android:backgroundTint="@color/prime_dark_green" />
 
-    <TextView
-        android:id="@+id/txt_register_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Veri Politikası CArt Curt"
-        tools:layout_editor_absoluteX="132dp"
-        tools:layout_editor_absoluteY="514dp" />
+        <TextView
+            android:id="@+id/txt_register1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/register_btn_back"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="Kayıt Ol"
+            android:textColor="@color/prime_dark_green"
+            android:textFontWeight="900"
+            android:textSize="30dp"
+            android:letterSpacing="0.05"/>
 
-    <TextView
-        android:id="@+id/txt_register1"
-        android:layout_width="107dp"
-        android:layout_height="20dp"
-        android:text="Tekrar Hoşgeldin"
-        tools:layout_editor_absoluteX="152dp"
-        tools:layout_editor_absoluteY="90dp" />
+        <TextView
+            android:id="@+id/txt_register2"
+            android:layout_below="@+id/txt_register1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/common_light_grey"
+            android:gravity="center"
+            android:paddingTop="13dp"
+            android:textSize="16dp"
+            android:text="Hesap Oluştur" />
+    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/txt_register2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hesabına Giriş Yap"
-        tools:layout_editor_absoluteX="146dp"
-        tools:layout_editor_absoluteY="144dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6  ">
 
-    <Button
-        android:id="@+id/register_btn_back"
-        android:layout_width="32dp"
-        android:layout_height="37dp"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="64dp" />
+        <EditText
+            android:id="@+id/register_txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/edittext"
+            android:hint="Adın Soyadın"
+            android:textColorHint="@color/prime_dark_green"
+            android:inputType="textPersonName"
+            android:padding="13dp"
+            android:textSize="13dp"/>
 
-    <EditText
-        android:id="@+id/register_txt_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Ad Soyad"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="190dp" />
+        <EditText
+            android:id="@+id/register_txt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_below="@+id/register_txt_name"
+            android:background="@drawable/edittext"
+            android:hint="E-posta Adresin"
+            android:textColorHint="@color/prime_dark_green"
+            android:inputType="textEmailAddress"
+            android:padding="13dp"
+            android:textSize="13dp"/>
 
-    <EditText
-        android:id="@+id/register_txt_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="E-Posta"
-        android:inputType="textEmailAddress"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="261dp" />
+        <EditText
+            android:id="@+id/register_txt_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_below="@+id/register_txt_email"
+            android:background="@drawable/edittext"
+            android:hint="Şifre"
+            android:textColorHint="@color/prime_dark_green"
+            android:inputType="textEmailAddress"
+            android:padding="13dp"
+            android:textSize="13dp"/>
 
-    <EditText
-        android:id="@+id/register_txt_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Şifre"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="344dp" />
+        <EditText
+            android:id="@+id/register_txt_password2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_below="@+id/register_txt_password"
+            android:background="@drawable/edittext"
+                android:hint="Şifreyi Doğrula"
+            android:textColorHint="@color/prime_dark_green"
+            android:inputType="textEmailAddress"
+            android:padding="13dp"
+            android:textSize="13dp"/>
 
-    <EditText
-        android:id="@+id/register_txt_password2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Şifre Doğrula"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="433dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/txt_register_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/register_txt_password2"
+            android:gravity="center"
+            android:layout_marginHorizontal="65dp"
+            android:layout_marginTop="35dp"
+            android:textColor="@color/common_light_grey"
+            android:textSize="12dp"
+            android:text="Kaydolarak, Şartlarımızı, Veri Politikamızı ve Çerez Politikamızı Kabul Etmiş Sayılırsınız." />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/register_btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="Kayıt Ol"
+            android:textAllCaps="false"
+            android:textFontWeight="700"
+            android:textSize="15dp"
+            app:cornerRadius="15dp" />
+
+
+        <TextView
+            android:id="@+id/txt_register_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/register_btn_register"
+            android:text="Hesabın var mı?" />
+
+        <TextView
+            android:id="@+id/txt_register_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Giris Yap" />
+
+
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
