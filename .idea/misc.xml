@@ -3,21 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/drawable-v24/backarrow.xml" value="0.3115" />
-        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/drawable-v24/edittext.xml" value="0.3115" />
-        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.362" />
-        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/drawable/ic_image.xml" value="0.3485" />
-        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.362" />
-        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/drawable/ic_wave_header_1.xml" value="0.258" />
-        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/drawable/ic_wave_header_2.xml" value="0.258" />
-        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/font-v26/poppins.xml" value="0.3880208333333333" />
-        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/font/poppins.xml" value="0.33229166666666665" />
-        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/font/poppinsfamily.xml" value="0.32760416666666664" />
-        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/layout/activity_landing.xml" value="0.33" />
-        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/layout/activity_register.xml" value="0.2937152629328773" />
+        <entry key="..\:/Users/90551/AndroidStudioProjects/MobileApplicationProject/app/src/main/res/layout/activity_landing.xml" value="0.1" />
+        <entry key="..\:/Users/90551/AndroidStudioProjects/MobileApplicationProject/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/90551/AndroidStudioProjects/MobileApplicationProject/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/irfan/AndroidStudioProjects/MobileApplicationProject/app/src/main/res/font-v26/poppins.xml" value="0.3223599828986746" />
+        <entry key="..\:/Users/irfan/AndroidStudioProjects/MobileApplicationProject/app/src/main/res/layout-sw600dp/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/irfan/AndroidStudioProjects/MobileApplicationProject/app/src/main/res/layout/activity_landing.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/irfan/AndroidStudioProjects/MobileApplicationProject/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/irfan/AndroidStudioProjects/MobileApplicationProject/app/src/main/res/layout/activity_register.xml" value="0.25" />
       </map>
     </option>
   </component>
