@@ -4,7 +4,7 @@
     <string name="app_welcome_sub">Hesabına giriş yap</string>
     <string name="app_register_sub">Hesap oluştur</string>
     <string name="app_login"><u>Giriş Yap</u></string>
-    <string name="app_register">Kayıt Ol</string>
+    <string name="app_register"><u>Kayıt Ol</u></string>
     <string name="app_email">E-Posta</string>
     <string name="app_password">Şifre</string>
     <string name="app_re_password">şifreyi Doğrula</string>

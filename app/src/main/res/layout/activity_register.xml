@@ -57,30 +57,30 @@
             android:id="@+id/register_txt_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="40dp"
             android:background="@drawable/edittext"
             android:hint="Adın Soyadın"
-            android:textColorHint="@color/prime_dark_green"
             android:inputType="textPersonName"
             android:padding="13dp"
-            android:textSize="13dp"/>
+            android:textColorHint="@color/prime_dark_green"
+            android:textSize="13dp" />
 
         <EditText
             android:id="@+id/register_txt_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
             android:layout_below="@+id/register_txt_name"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="40dp"
             android:background="@drawable/edittext"
             android:hint="E-posta Adresin"
-            android:textColorHint="@color/prime_dark_green"
             android:inputType="textEmailAddress"
             android:padding="13dp"
-            android:textSize="13dp"/>
+            android:textColorHint="@color/prime_dark_green"
+            android:textSize="13dp" />
 
         <EditText
             android:id="@+id/register_txt_password"
@@ -136,13 +136,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
+            android:layout_marginBottom="25dp"
             android:fontFamily="@font/poppins_light"
             android:text="Kayıt Ol"
             android:textAllCaps="false"
             android:textFontWeight="700"
             android:textSize="15dp"
-            app:cornerRadius="15dp"
-            android:layout_marginBottom="25dp"/>
+            app:cornerRadius="15dp" />
 
 
         <LinearLayout
