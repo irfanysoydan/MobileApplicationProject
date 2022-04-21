@@ -161,7 +161,7 @@
                 android:fontFamily="@font/poppins"
                 android:text="Hesabın yok mu?"
                 android:textColor="@color/common_light_grey"
-                android:textStyle="bold" />
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/txt_login5"
