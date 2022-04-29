@@ -31,7 +31,7 @@
             android:layout_marginTop="25dp"
             android:fontFamily="@font/poppins_bold"
             android:gravity="center"
-            android:text="<Project Name>"
+            android:text="Project Name"
             android:textColor="@color/prime_dark_green"
             android:textSize="35dp" />
 
