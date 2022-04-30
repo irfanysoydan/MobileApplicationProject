@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.cbu.mobileapplicationproject.R;
+import com.cbu.mobileapplicationproject.databinding.ActivityMainBinding;
+import com.cbu.mobileapplicationproject.databinding.ActivityRegisterBinding;
 
 public class RegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        ActivityRegisterBinding viewBinding = ActivityRegisterBinding.inflate(getLayoutInflater());
+        setContentView(viewBinding.getRoot());
     }
 }
