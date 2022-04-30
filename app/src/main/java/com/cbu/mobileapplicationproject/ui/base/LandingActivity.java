@@ -1,8 +1,10 @@
-package com.cbu.mobileapplicationproject;
+package com.cbu.mobileapplicationproject.ui.base;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.cbu.mobileapplicationproject.R;
 
 public class LandingActivity extends AppCompatActivity {
 

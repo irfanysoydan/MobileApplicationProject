@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity"
+    tools:context=".ui.base.RegisterActivity"
     android:orientation="vertical">
 
 
@@ -106,7 +106,7 @@
             android:layout_marginRight="40dp"
             android:layout_below="@+id/register_txt_password"
             android:background="@drawable/edittext"
-                android:hint="Şifreyi Doğrula"
+            android:hint="Şifreyi Doğrula"
             android:textColorHint="@color/prime_dark_green"
             android:inputType="textEmailAddress"
             android:padding="13dp"
@@ -172,17 +172,8 @@
                 android:fontFamily="@font/poppins"
                 android:text="@string/app_login"
                 android:textColor="@color/prime_dark_green" />
-
         </LinearLayout>
-
-
-
-
-
     </RelativeLayout>
-
-
-
 </LinearLayout>
 
 
