@@ -10,19 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileApplicationProject">
         <activity
-            android:name=".MainPageActivity"
+            android:name=".ui.base.MainPageActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".ui.base.RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".LandingActivity"
+            android:name=".ui.base.LandingActivity"
             android:exported="true" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.base.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.base.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
