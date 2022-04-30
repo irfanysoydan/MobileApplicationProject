@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.cbu.mobileapplicationproject.R;
-import com.cbu.mobileapplicationproject.databinding.ActivityMainBinding;
 import com.cbu.mobileapplicationproject.databinding.ActivityRegisterBinding;
 
 public class RegisterActivity extends AppCompatActivity {
