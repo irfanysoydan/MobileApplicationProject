@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.base.RegisterActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ui.base.RegisterActivity">
 
 
     <RelativeLayout
@@ -17,8 +17,8 @@
             android:id="@+id/register_btn_back"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/backarrow"
             android:backgroundTint="@color/prime_dark_green" />
 
@@ -37,15 +37,15 @@
 
         <TextView
             android:id="@+id/txt_register2"
-            android:layout_below="@+id/txt_register1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_register1"
             android:fontFamily="@font/poppins_medium"
-            android:textColor="@color/common_light_grey"
             android:gravity="center"
             android:paddingTop="13dp"
-            android:textSize="16dp"
-            android:text="Hesap Oluştur" />
+            android:text="Hesap Oluştur"
+            android:textColor="@color/common_light_grey"
+            android:textSize="16dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -86,31 +86,31 @@
             android:id="@+id/register_txt_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
             android:layout_below="@+id/register_txt_email"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="40dp"
             android:background="@drawable/edittext"
             android:hint="Şifre"
-            android:textColorHint="@color/prime_dark_green"
             android:inputType="textEmailAddress"
             android:padding="13dp"
-            android:textSize="13dp"/>
+            android:textColorHint="@color/prime_dark_green"
+            android:textSize="13dp" />
 
         <EditText
             android:id="@+id/register_txt_password2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
             android:layout_below="@+id/register_txt_password"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="40dp"
             android:background="@drawable/edittext"
             android:hint="Şifreyi Doğrula"
-            android:textColorHint="@color/prime_dark_green"
             android:inputType="textEmailAddress"
             android:padding="13dp"
-            android:textSize="13dp"/>
+            android:textColorHint="@color/prime_dark_green"
+            android:textSize="13dp" />
 
         <TextView
             android:id="@+id/txt_register_3"
@@ -149,8 +149,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/register_btn_register"
-            android:gravity="center"
-            android:layout_marginTop="-30dp">
+            android:layout_marginTop="-30dp"
+            android:gravity="center">
 
 
             <TextView
