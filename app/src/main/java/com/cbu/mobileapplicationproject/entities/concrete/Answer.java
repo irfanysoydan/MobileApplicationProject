@@ -2,16 +2,16 @@ package com.cbu.mobileapplicationproject.entities.concrete;
 
 public class Answer extends EntityBase{
 
-    private Content content;
+    private Content Content;
     private int QuestionId;
     private Boolean IsVerified;
 
     public Content getContent() {
-        return content;
+        return Content;
     }
 
     public void setContent(Content content) {
-        this.content = content;
+        this.Content = content;
     }
 
     public int getQuestionId() {
