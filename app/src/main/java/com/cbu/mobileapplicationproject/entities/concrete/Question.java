@@ -1,14 +1,22 @@
 package com.cbu.mobileapplicationproject.entities.concrete;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 
 public class Question extends EntityBase{
 
+    @SerializedName("title")
     private String Title;
+    @SerializedName("content")
     private Content Content;
-    private ArrayList<Tag> TagIds;
+    @SerializedName("tags")
+    private ArrayList<Tag> Tags;
+    @SerializedName("view_count")
     private int ViewCount;
+    @SerializedName("rate")
     private int Rate;
+    @SerializedName("answers")
     private ArrayList<Answer> Answers;
 
     public int getRate() {
@@ -37,12 +45,12 @@ public class Question extends EntityBase{
         Content = content;
     }
 
-    public ArrayList<Tag> getTagIds() {
-        return TagIds;
+    public ArrayList<Tag> getTags() {
+        return Tags;
     }
 
-    public void setTagIds(ArrayList<Tag> tagIds) {
-        TagIds = tagIds;
+    public void setTags(ArrayList<Tag> tags) {
+        Tags = tags;
     }
 
     public int getViewCount() {

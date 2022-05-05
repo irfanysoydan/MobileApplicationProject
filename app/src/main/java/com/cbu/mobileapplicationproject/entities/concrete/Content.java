@@ -1,10 +1,14 @@
 package com.cbu.mobileapplicationproject.entities.concrete;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 
 public class Content extends EntityBase{
 
+    @SerializedName("text")
     private String Text;
+    @SerializedName("media_paths")
     private ArrayList<String> MediaPaths;
 
     public String getText() {

@@ -25,10 +25,15 @@ public class User extends EntityBase{
     private String Name;
     @SerializedName("surname")
     private String Surname;
+    @SerializedName("username")
     private String Username;
+    @SerializedName("mail")
     private String Mail;
+    @SerializedName("password")
     private String Password;
+    @SerializedName("is_verified")
     private boolean IsVerified;
+    @SerializedName("auth_level")
     private int AuthLevel;
     private ArrayList<Question> Followings;
 

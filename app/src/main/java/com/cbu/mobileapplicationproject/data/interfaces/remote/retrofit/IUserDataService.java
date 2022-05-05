@@ -19,7 +19,7 @@ public interface IUserDataService{
     @Headers({
             "app-id: 627302e21afb663b1f7ca379"
     })
-    @GET("user?page=1&limit=10")
+    @GET("user")
     Call<User> getAllData();
 
     @GET("user/{id}")
@@ -32,6 +32,9 @@ public interface IUserDataService{
     Call<User> update(
             @Part("name") RequestBody name,
             @Part("surname") RequestBody surname,
+            @Part("username") RequestBody username,
+            @Part("mail") RequestBody mail,
+            @Part("password") RequestBody password,
             @Part("is_verified") RequestBody is_verified,
             @Part("auth_level") RequestBody authLevel);
 

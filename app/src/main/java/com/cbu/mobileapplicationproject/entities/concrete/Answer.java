@@ -1,9 +1,14 @@
 package com.cbu.mobileapplicationproject.entities.concrete;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Answer extends EntityBase{
 
+    @SerializedName("content")
     private Content Content;
+    @SerializedName("question_id")
     private int QuestionId;
+    @SerializedName("is_verified")
     private Boolean IsVerified;
 
     public Content getContent() {
