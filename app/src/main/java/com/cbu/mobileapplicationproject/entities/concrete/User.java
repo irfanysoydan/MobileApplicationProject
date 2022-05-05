@@ -1,10 +1,29 @@
 package com.cbu.mobileapplicationproject.entities.concrete;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 
 public class User extends EntityBase{
+    @SerializedName("firstName")
+    @Expose
+    private String FirstName;
+    public String getFirstName() {
+        return this.FirstName;
+    }
 
+    public void setFirstName(String firstName) {
+        this.FirstName = firstName;
+    }
+
+    public User(String firstName){
+        this.FirstName=firstName;
+    }
+
+    @SerializedName("name")
     private String Name;
+    @SerializedName("surname")
     private String Surname;
     private String Username;
     private String Mail;
