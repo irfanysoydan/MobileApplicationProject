@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:windowSoftInputMode="adjustPan"
+    android:id="@+id/mainlayout"
     tools:context=".ui.base.MainActivity">
 
     <RelativeLayout
@@ -22,6 +24,7 @@
             android:backgroundTint="@color/prime_dark_green" />
 
         <TextView
+            android:id="@+id/txt_project"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
@@ -32,13 +35,25 @@
             android:textColor="@color/prime_dark_green"
             android:textSize="25dp" />
 
+
+        <EditText
+            android:id="@+id/edittext_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_toStartOf="@+id/btn_search"
+            android:layout_toEndOf="@+id/register_btn_hamburger"
+            android:hint="Aratmak istediğiniz kelimeyi giriniz."
+            android:textSize="12dp" />
+
+
         <Button
-            android:id="@+id/register_btn_search"
+            android:id="@+id/btn_search"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/register_btn_account"
             android:layout_marginRight="10dp"
+            android:layout_toStartOf="@+id/register_btn_account"
             android:background="@drawable/ic_baseline_search_24"
             android:backgroundTint="@color/prime_dark_green" />
 
@@ -46,9 +61,9 @@
             android:id="@+id/register_btn_account"
             android:layout_width="36dp"
             android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="30dp"
-            android:layout_alignParentEnd="true"
             android:background="@drawable/ic_baseline_account_circle_24"
             android:backgroundTint="@color/prime_dark_green" />
     </RelativeLayout>
@@ -58,6 +73,10 @@
         android:layout_height="0dp"
         android:layout_weight="0.85">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </RelativeLayout>
 
     <RelativeLayout
