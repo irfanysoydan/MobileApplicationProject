@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:background="@drawable/shadow">
+
+    <TextView
+        android:id="@+id/post_title"
+        android:layout_width="320dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="8dp"
+        android:text="Tarımda kullanılan gübrenin etkisi"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/profile_icon"
+        app:layout_constraintTop_toBottomOf="@+id/date_info" />
+
+    <TextView
+        android:id="@+id/date_info"
+        android:layout_width="85dp"
+        android:layout_height="18dp"
+        android:text="18.02.2022"
+        android:textSize="10dp"
+        app:layout_constraintStart_toEndOf="@+id/profile_icon"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="124dp"
+        android:layout_height="30dp"
+        android:text="Yusuf Topkaya"
+        app:layout_constraintStart_toEndOf="@+id/profile_icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/profile_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/profile_icon" />
+</androidx.constraintlayout.widget.ConstraintLayout>
