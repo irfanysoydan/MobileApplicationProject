@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileApplicationProject">
         <activity
-            android:name=".ui.base.MainPageActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.base.RegisterActivity"
             android:exported="true" />
         <activity
