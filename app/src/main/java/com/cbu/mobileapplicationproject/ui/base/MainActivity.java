@@ -19,7 +19,6 @@ import android.widget.TextView;
 import com.cbu.mobileapplicationproject.Post;
 import com.cbu.mobileapplicationproject.PostRecyclerAdapter;
 import com.cbu.mobileapplicationproject.R;
-import com.cbu.mobileapplicationproject.databinding.ActivityLoginBinding;
 import com.cbu.mobileapplicationproject.databinding.ActivityMainBinding;
 
 import org.w3c.dom.Text;

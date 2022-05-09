@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp"
+    >
+
+    <ImageView
+        android:id="@+id/profile_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/profile_icon" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="Yusuf Topkaya"
+        android:textColor="@color/prime_dark_green"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintStart_toEndOf="@+id/profile_icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/date_info"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:text="18.02.2022"
+        android:textSize="10dp"
+        app:layout_constraintStart_toEndOf="@+id/profile_icon"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <TextView
+        android:id="@+id/post_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingBottom="5dp"
+        android:text="Tarımda kullanılan gübrenin etkisi ve traktör fiyatlarındaki fahiş fiyatlanma"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/prime_dark_green"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/profile_icon"
+        app:layout_constraintTop_toBottomOf="@+id/profile_icon" />
+
+    <Button
+        android:id="@+id/arrow_up"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/up_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/post_title" />
+
+    <TextView
+        android:id="@+id/like_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/arrow_up"
+        app:layout_constraintStart_toStartOf="@+id/arrow_up"
+        app:layout_constraintTop_toBottomOf="@+id/arrow_up" />
+
+    <Button
+        android:id="@+id/arrow_down"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/down_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/like_counter" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="15dp"
+        android:lineSpacingExtra="5dp"
+        android:text="Lorem ipsum dolor sit e et dolore magna  asdasdasdasdasdasdasdasdasdasdasdasdas dasdasd asd asd asd asdaliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proid"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/arrow_down"
+        app:layout_constraintTop_toTopOf="@+id/arrow_up" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Cevaplar"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/comment_imageview"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/profile_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/comment_text"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/post_title"
+        android:background="@drawable/edittext"
+        android:gravity="top"
+        android:hint="Cevabını Yaz..."
+        android:maxLength="400"
+        android:padding="5dp"
+        android:textColorHint="@color/prime_dark_green"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/comment_imageview"
+        app:layout_constraintTop_toTopOf="@+id/comment_imageview" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_comment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginTop="10dp"
+        android:text="Gönder"
+        android:textAllCaps="false"
+        android:textSize="12dp"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/comment_text" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

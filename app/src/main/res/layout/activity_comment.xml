@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/comment_layout"
+    tools:context=".ui.base.CommentActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.075">
+
+      <Button
+          android:id="@+id/register_btn_hamburger"
+          android:layout_width="36dp"
+          android:layout_height="36dp"
+          android:layout_centerVertical="true"
+          android:layout_marginLeft="30dp"
+          android:background="@drawable/ic_baseline_menu_24"
+          android:backgroundTint="@color/prime_dark_green" />
+
+      <TextView
+          android:id="@+id/txt_project"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_marginLeft="20dp"
+          android:layout_toEndOf="@+id/register_btn_hamburger"
+          android:fontFamily="@font/poppins_bold"
+          android:gravity="center"
+          android:text="NADAS"
+          android:textColor="@color/prime_dark_green"
+          android:textSize="25dp" />
+
+
+      <Button
+          android:id="@+id/btn_search"
+          android:layout_width="36dp"
+          android:layout_height="36dp"
+          android:layout_centerVertical="true"
+          android:layout_marginRight="10dp"
+          android:layout_toStartOf="@+id/register_btn_account"
+          android:background="@drawable/ic_baseline_search_24"
+          android:backgroundTint="@color/prime_dark_green" />
+
+      <Button
+          android:id="@+id/register_btn_account"
+          android:layout_width="36dp"
+          android:layout_height="36dp"
+          android:layout_alignParentEnd="true"
+          android:layout_centerVertical="true"
+          android:layout_marginRight="30dp"
+          android:background="@drawable/ic_baseline_account_circle_24"
+          android:backgroundTint="@color/prime_dark_green" />
+    </RelativeLayout>
+
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.85">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include layout="@layout/question"/>
+
+            </LinearLayout>
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_comment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.075">
+
+      <Button
+          android:id="@+id/register_btn_home"
+          android:layout_width="36dp"
+          android:layout_height="36dp"
+          android:layout_centerVertical="true"
+          android:layout_marginLeft="30dp"
+          android:background="@drawable/ic_baseline_home_24" />
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_toStartOf="@+id/register_btn_profile"
+          android:layout_toEndOf="@+id/register_btn_home"
+          android:gravity="center">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:gravity="center">
+
+
+          <Button
+              android:id="@+id/register_btn_collection2"
+              android:layout_width="36dp"
+              android:layout_height="36dp"
+              android:layout_centerVertical="true"
+              android:background="@drawable/ic_baseline_control_point_24" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:gravity="center">
+
+          <Button
+              android:id="@+id/register_btn_collection"
+              android:layout_width="36dp"
+              android:layout_height="36dp"
+              android:layout_centerVertical="true"
+
+              android:background="@drawable/ic_baseline_turned_in_24" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"></LinearLayout>
+
+      </LinearLayout>
+
+
+      <Button
+          android:id="@+id/register_btn_profile"
+          android:layout_width="36dp"
+          android:layout_height="36dp"
+          android:layout_alignParentEnd="true"
+          android:layout_centerVertical="true"
+          android:layout_marginRight="30dp"
+          android:background="@drawable/ic_baseline_account_circle_24" />
+    </RelativeLayout>
+
+  </LinearLayout>
