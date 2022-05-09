@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class User extends EntityBase implements Serializable {
+public class User extends EntityBase implements Serializable{
 
     @SerializedName("name")
     private String Name;
@@ -26,10 +26,6 @@ public class User extends EntityBase implements Serializable {
     @SerializedName("followings")
     private List<Question> Followings;
 
-    public User()
-    {
-
-    }
 
     public User(String name, String surname, String mail, String password) {
         Name = name;

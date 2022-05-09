@@ -3,21 +3,22 @@ package com.cbu.mobileapplicationproject.entities.concrete;
 import com.cbu.mobileapplicationproject.entities.interfaces.IEntityBase;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class EntityBase implements IEntityBase {
+public class EntityBase implements IEntityBase, Serializable {
 
     @SerializedName("id")
     private int Id;
-    @SerializedName("creation_date")
+    @SerializedName("creationDate")
     private Date CreationDate;
-    @SerializedName("created_user_id")
+    @SerializedName("createdUserId")
     private int CreatedUserId;
-    @SerializedName("update_date")
+    @SerializedName("updateDate")
     private Date UpdateDate;
-    @SerializedName("updated_user_id")
+    @SerializedName("updatedUserId")
     private int UpdatedUserId;
-    @SerializedName("is_deleted")
+    @SerializedName("isDeleted")
     private boolean IsDeleted;
 
     public int getId() {
