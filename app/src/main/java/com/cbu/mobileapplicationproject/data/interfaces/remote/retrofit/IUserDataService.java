@@ -36,7 +36,8 @@ public interface IUserDataService{
             @Part("mail") RequestBody mail,
             @Part("password") RequestBody password,
             @Part("is_verified") RequestBody is_verified,
-            @Part("auth_level") RequestBody authLevel);
+            @Part("auth_level") RequestBody authLevel,
+            @Part("followings") RequestBody followings);
 
     @DELETE("user/{id}")
     Call<User> delete(@Path("id") int id);

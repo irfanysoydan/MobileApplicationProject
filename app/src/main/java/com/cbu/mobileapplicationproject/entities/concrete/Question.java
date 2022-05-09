@@ -3,6 +3,7 @@ package com.cbu.mobileapplicationproject.entities.concrete;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Question extends EntityBase{
 
@@ -11,13 +12,13 @@ public class Question extends EntityBase{
     @SerializedName("content")
     private Content Content;
     @SerializedName("tags")
-    private ArrayList<Tag> Tags;
+    private List<Tag> Tags;
     @SerializedName("view_count")
     private int ViewCount;
     @SerializedName("rate")
     private int Rate;
     @SerializedName("answers")
-    private ArrayList<Answer> Answers;
+    private List<Answer> Answers;
 
     public int getRate() {
         return Rate;
@@ -45,14 +46,6 @@ public class Question extends EntityBase{
         Content = content;
     }
 
-    public ArrayList<Tag> getTags() {
-        return Tags;
-    }
-
-    public void setTags(ArrayList<Tag> tags) {
-        Tags = tags;
-    }
-
     public int getViewCount() {
         return ViewCount;
     }
@@ -61,12 +54,19 @@ public class Question extends EntityBase{
         ViewCount = viewCount;
     }
 
-    public ArrayList<Answer> getAnswers() {
+    public List<Tag> getTags() {
+        return Tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        Tags = tags;
+    }
+
+    public List<Answer> getAnswers() {
         return Answers;
     }
 
-    public void setAnswers(ArrayList<Answer> answers) {
+    public void setAnswers(List<Answer> answers) {
         Answers = answers;
     }
-
 }

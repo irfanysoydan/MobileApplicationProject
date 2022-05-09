@@ -3,13 +3,14 @@ package com.cbu.mobileapplicationproject.entities.concrete;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Content extends EntityBase{
 
     @SerializedName("text")
     private String Text;
     @SerializedName("media_paths")
-    private ArrayList<String> MediaPaths;
+    private List<String> MediaPaths;
 
     public String getText() {
         return Text;
@@ -19,11 +20,11 @@ public class Content extends EntityBase{
         Text = text;
     }
 
-    public ArrayList<String> getMediaPaths() {
+    public List<String> getMediaPaths() {
         return MediaPaths;
     }
 
-    public void setMediaPaths(ArrayList<String> mediaPaths) {
+    public void setMediaPaths(List<String> mediaPaths) {
         MediaPaths = mediaPaths;
     }
 }

@@ -4,22 +4,9 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class User extends EntityBase{
-    @SerializedName("firstName")
-    @Expose
-    private String FirstName;
-    public String getFirstName() {
-        return this.FirstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.FirstName = firstName;
-    }
-
-    public User(String firstName){
-        this.FirstName=firstName;
-    }
 
     @SerializedName("name")
     private String Name;
@@ -35,7 +22,16 @@ public class User extends EntityBase{
     private boolean IsVerified;
     @SerializedName("auth_level")
     private int AuthLevel;
-    private ArrayList<Question> Followings;
+    @SerializedName("followings")
+    private List<Question> Followings;
+
+    public User(String name, String surname, String username, String mail, String password) {
+        Name = name;
+        Surname = surname;
+        Username = username;
+        Mail = mail;
+        Password = password;
+    }
 
     public String getName() {
         return Name;
@@ -93,11 +89,11 @@ public class User extends EntityBase{
         AuthLevel = authLevel;
     }
 
-    public ArrayList<Question> getFollowings() {
+    public List<Question> getFollowings() {
         return Followings;
     }
 
-    public void setFollowings(ArrayList<Question> followings) {
+    public void setFollowings(List<Question> followings) {
         Followings = followings;
     }
 }
