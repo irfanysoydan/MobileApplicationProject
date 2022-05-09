@@ -100,20 +100,20 @@
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="40dp"
             android:background="@drawable/edittext"
-            android:textColorHint="@color/prime_dark_green"
             android:gravity="top"
             android:hint="Sormak istediğiniz soruyu giriniz..."
             android:maxLength="400"
             android:padding="10dp"
+            android:textColorHint="@color/prime_dark_green"
             android:textSize="15dp" />
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/post_text"
             android:layout_marginHorizontal="40dp"
             android:layout_marginBottom="25dp"
             android:fontFamily="@font/poppins_regular"
-            android:layout_below="@+id/post_text"
             android:text="GÖNDER"
             android:textAllCaps="false"
             android:textFontWeight="700"
