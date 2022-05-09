@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:windowSoftInputMode="adjustPan"
     android:id="@+id/mainlayout"
-    tools:context=".ui.base.MainActivity">
+    tools:context=".ui.base.PostingActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         android:layout_weight="0.075">
 
         <Button
-            android:id="@+id/register_btn_hamburger"
+            android:id="@+id/post_btn_hamburger"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_centerVertical="true"
@@ -28,23 +28,12 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
-            android:layout_toEndOf="@+id/register_btn_hamburger"
+            android:layout_toEndOf="@+id/post_btn_hamburger"
             android:fontFamily="@font/poppins_bold"
             android:gravity="center"
             android:text="NADAS"
             android:textColor="@color/prime_dark_green"
             android:textSize="25dp" />
-
-
-        <EditText
-            android:id="@+id/edittext_search"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_toStartOf="@+id/btn_search"
-            android:layout_toEndOf="@+id/register_btn_hamburger"
-            android:hint="Aratmak istediğiniz kelimeyi giriniz."
-            android:textSize="10dp" />
 
 
         <Button
@@ -53,12 +42,12 @@
             android:layout_height="36dp"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:layout_toStartOf="@+id/register_btn_account"
+            android:layout_toStartOf="@+id/post_btn_account"
             android:background="@drawable/ic_baseline_search_24"
             android:backgroundTint="@color/prime_dark_green" />
 
         <Button
-            android:id="@+id/register_btn_account"
+            android:id="@+id/post_btn_account"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_alignParentEnd="true"
@@ -73,10 +62,64 @@
         android:layout_height="0dp"
         android:layout_weight="0.85">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview"
+        <TextView
+            android:id="@+id/post_main_title"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="left"
+            android:text="Bir Soru Sor"
+            android:textColor="@color/prime_dark_green"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/post_title"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/post_main_title"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/edittext"
+            android:hint="Konu başlığını giriniz..."
+            android:maxLength="40"
+            android:padding="10dp"
+            android:textAlignment="textStart"
+            android:textColorHint="@color/prime_dark_green"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/post_text"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/post_title"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/edittext"
+            android:textColorHint="@color/prime_dark_green"
+            android:gravity="top"
+            android:hint="Sormak istediğiniz soruyu giriniz..."
+            android:maxLength="400"
+            android:padding="10dp"
+            android:textSize="15dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginBottom="25dp"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_below="@+id/post_text"
+            android:text="GÖNDER"
+            android:textAllCaps="false"
+            android:textFontWeight="700"
+            android:textSize="15dp"
+            app:cornerRadius="15dp" />
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -90,12 +133,13 @@
             android:layout_height="36dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="30dp"
-            android:background="@drawable/ic_baseline_home_24" />
+            android:background="@drawable/ic_baseline_home_24"
+            android:backgroundTint="@color/prime_dark_green" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_toStartOf="@+id/register_btn_profile"
+            android:layout_toStartOf="@+id/post_btn_profile"
             android:layout_toEndOf="@+id/register_btn_home"
             android:gravity="center">
 
@@ -103,61 +147,44 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight=".2"></LinearLayout>
+                android:layout_weight=".2">
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".2"
                 android:gravity="center">
-
-
 
                 <Button
                     android:id="@+id/register_btn_collection2"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:layout_centerVertical="true"
-                    android:background="@drawable/ic_baseline_control_point_24" />
+
+                    android:background="@drawable/ic_baseline_turned_in_24"
+                    android:backgroundTint="@color/prime_dark_green" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight=".2"></LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".2"
-                android:gravity="center">
-
-                <Button
-                    android:id="@+id/register_btn_collection"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:layout_centerVertical="true"
-
-                    android:background="@drawable/ic_baseline_turned_in_24" />
-
+                android:layout_weight=".2">
             </LinearLayout>
 
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".2"></LinearLayout>
 
         </LinearLayout>
 
 
         <Button
-            android:id="@+id/register_btn_profile"
+            android:id="@+id/post_btn_profile"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="30dp"
-            android:background="@drawable/ic_baseline_account_circle_24" />
+            android:background="@drawable/ic_baseline_account_circle_24"
+            android:backgroundTint="@color/prime_dark_green" />
     </RelativeLayout>
 </LinearLayout>

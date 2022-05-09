@@ -136,9 +136,9 @@
             android:id="@+id/login_btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_regular"
             android:layout_marginHorizontal="40dp"
             android:layout_marginBottom="25dp"
+            android:fontFamily="@font/poppins_regular"
             android:text="Giriş Yap"
             android:textAllCaps="false"
             android:textFontWeight="700"
@@ -159,7 +159,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                android:fontFamily="@font/poppins"
+                android:fontFamily="@font/poppins_regular"
                 android:text="Hesabın yok mu?"
                 android:textColor="@color/common_light_grey"
                 android:textStyle="normal" />
@@ -170,7 +170,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/register_btn_register"
                 android:layout_toRightOf="@+id/txt_login4"
-                android:fontFamily="@font/poppins"
+                android:fontFamily="@font/poppins_regular"
                 android:text="@string/app_register"
                 android:textColor="@color/prime_dark_green" />
 
