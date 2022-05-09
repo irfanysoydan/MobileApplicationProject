@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         viewBinding.loginBtnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewModel.LoginUser(viewBinding.loginTxtEmail.getText().toString(),viewBinding.loginTxtPassword.getText().toString());
+                viewModel.LoginUser(viewBinding.loginTxtEmail.getText().toString(),viewBinding.loginTxtPassword.getText().toString(),LoginActivity.this);
             }
         });
 
@@ -35,6 +35,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        viewBinding.loginBtnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

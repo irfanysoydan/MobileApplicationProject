@@ -88,7 +88,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/edittext"
             android:hint="Şifre"
-            android:inputType="textEmailAddress"
+            android:inputType="textPassword"
             android:padding="13dp"
             android:textColorHint="@color/prime_dark_green"
             android:textSize="13dp" />

@@ -26,6 +26,10 @@ public class User extends EntityBase implements Serializable{
     @SerializedName("followings")
     private List<Question> Followings;
 
+    public User(String mail, String password) {
+        Mail = mail;
+        Password = password;
+    }
 
     public User(String name, String surname, String mail, String password) {
         Name = name;

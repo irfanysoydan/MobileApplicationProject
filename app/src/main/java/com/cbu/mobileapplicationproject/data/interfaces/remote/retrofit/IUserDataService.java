@@ -26,6 +26,9 @@ public interface IUserDataService{
     @POST("User")
     Call<User> create(@Body User data);
 
+    @POST("User/login")
+    Call<User> login(@Body User data);
+
 
     @PUT("User")
     Call<User> update(
