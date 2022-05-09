@@ -93,14 +93,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void fillTheArray(){
-        posts.add(new Post(R.drawable.profile_icon, "Yusuf Topkaya", "25 Nisan", "A"));
-        posts.add(new Post(R.drawable.profile_icon, "Yusuf Topkaya", "25 Nisan", "Araba"));
-        posts.add(new Post(R.drawable.profile_icon, "Yusuf Topkaya", "25 Nisan", "Ev"));
-        posts.add(new Post(R.drawable.profile_icon, "Yusuf Topkaya", "25 Nisan", "Deli"));
-        posts.add(new Post(R.drawable.profile_icon, "Yusuf Topkaya", "25 Nisan", "Dana"));
-        posts.add(new Post(R.drawable.profile_icon, "Yusuf Topkaya", "25 Nisan", "Hahahah"));
-        posts.add(new Post(R.drawable.profile_icon, "Yusuf Topkaya", "25 Nisan", "Ben"));
-        posts.add(new Post(R.drawable.profile_icon, "Yusuf Topkaya", "25 Nisan", "Sen"));
+        posts.add(new Post(R.drawable.profile_icon, "Yusuf Topkaya", "25 Nisan", "Traktörlerin Uşağa giderken fazla hararet yapması"));
+        posts.add(new Post(R.drawable.profile_icon, "İrfan Yunus Soydan", "25 Nisan", "Çim biçme makinelerinin çim gelişimi üzerine etkisi"));
+        posts.add(new Post(R.drawable.profile_icon, "Ömer Özoğlu", "25 Nisan", "Konyadaki verimli arazilerin yapay gübre kullanılarak harcanması"));
+        posts.add(new Post(R.drawable.profile_icon, "Recep Şen", "25 Nisan", "Turunçgillerdeki vitamin miktarının nasıl artırılacağı"));
+        posts.add(new Post(R.drawable.profile_icon, "Hikmet Gezmen", "25 Nisan", "Suriyeli Mültecilerin Hataydaki topraklar üzerine etkisi"));
+        posts.add(new Post(R.drawable.profile_icon, "Halil Furkan Deniz", "25 Nisan", "Gaziosmanpaşa halkının yarısının meyvesi bıçak olan bir ağaç üretimini istemesi"));
+        posts.add(new Post(R.drawable.profile_icon, "Yusuf Özçevik", "25 Nisan", "Yusuf Özçevik"));
+        posts.add(new Post(R.drawable.profile_icon, "Müge Özçevik", "25 Nisan", "Müge Özçevik"));
     }
     private void viewSettings(){
         recyclerView = findViewById(R.id.recyclerview);

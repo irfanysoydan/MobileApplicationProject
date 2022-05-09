@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileApplicationProject">
         <activity
+            android:name=".ui.base.PostingActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.base.RegisterActivity"
             android:exported="true" />
         <activity
