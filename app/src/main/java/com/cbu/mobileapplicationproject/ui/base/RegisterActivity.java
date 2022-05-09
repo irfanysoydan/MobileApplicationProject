@@ -39,38 +39,14 @@ public class RegisterActivity extends AppCompatActivity {
         TextView Pass = viewBinding.registerTxtPassword;
         TextView RePass = viewBinding.registerTxtPassword2;
 
-        userDataService.getOneData(1).enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                Log.e("Cevap", response.body().getName() );
-            }
-
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                Log.e("Hata Mesajı", t.toString() );
-            }
-        });
 
         viewBinding.registerBtnRegister.setOnClickListener(view -> {
 
             if(Pass.getText().toString().trim().length()>0 && Pass.getText().toString().equals(RePass.getText().toString()))
             {
-                User yUser=viewModel.CreateUser(Name.getText().toString(),SName.getText().toString(),Email.getText().toString(),Pass.getText().toString());
-                Log.e("Sonuç", "User oluştu" );
-                Log.e("Sonuç",""+yUser.getId() );
-                //Snackbar.make(view,"Başarılı giriş",Snackbar.LENGTH_SHORT).show();
-                if(yUser!=null)
-                {
-                    Log.e("Sonuç", "Geldi" );
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    intent.putExtra("user", yUser);
-                    startActivity(intent);
-                }
-                else
-                {
-                    Snackbar.make(view,"Hata oluştu.",Snackbar.LENGTH_SHORT).show();
-                }
-
+                viewModel.CreateUser(Name.getText().toString(),SName.getText().toString(),Email.getText().toString(),Pass.getText().toString(),this.getApplicationContext());
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
             else
             {
@@ -79,7 +55,6 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         });
-
         viewBinding.registerBtnBack.setOnClickListener(view -> {
 
         });

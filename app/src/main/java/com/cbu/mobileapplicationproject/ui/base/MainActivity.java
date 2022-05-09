@@ -5,10 +5,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Layout;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -27,6 +29,8 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
+import javax.security.auth.login.LoginException;
+
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Post> posts;
@@ -35,24 +39,25 @@ public class MainActivity extends AppCompatActivity {
     private Button searchButton;
     private TextView projectName;
     private EditText editSearch;
+    private SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityMainBinding viewBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(viewBinding.getRoot());
 
-        User myUser = (User) getIntent().getSerializableExtra("user");
-
         projectName = (TextView) findViewById(R.id.txt_project);
         searchButton = (Button)findViewById(R.id.btn_search);
         editSearch = (EditText)findViewById(R.id.edittext_search);
         editSearch.setVisibility(View.INVISIBLE);
 
-
-
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sp=getApplicationContext().getSharedPreferences("MyUserPrefs",Context.MODE_PRIVATE);
+                int a=sp.getInt("id",0);
+                Log.e("kullanici id", ""+a);
+                Log.e("kullanici adi soyadi",sp.getString("name","")+" "+(sp.getString("surname","")));
                 projectName.setVisibility(view.GONE);
                 editSearch.setVisibility(View.VISIBLE);
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
