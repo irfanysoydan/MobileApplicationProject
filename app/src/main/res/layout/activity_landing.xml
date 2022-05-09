@@ -36,20 +36,20 @@
             android:textSize="35dp" />
 
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/landing_btn_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="40dp"
-                android:layout_marginBottom="25dp"
-                android:layout_below="@id/txt_landing1"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Giriş Yap"
-                android:textAllCaps="false"
-                android:textFontWeight="700"
-                android:textSize="15dp"
-                android:layout_marginTop="80dp"
-                app:cornerRadius="15dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/landing_btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_landing1"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="25dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Giriş Yap"
+            android:textAllCaps="false"
+            android:textFontWeight="700"
+            android:textSize="15dp"
+            app:cornerRadius="15dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/landing_btn_register"

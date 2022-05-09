@@ -3,10 +3,11 @@ package com.cbu.mobileapplicationproject.entities.concrete;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class User extends EntityBase{
+public class User extends EntityBase implements Serializable {
 
     @SerializedName("name")
     private String Name;
@@ -14,7 +15,7 @@ public class User extends EntityBase{
     private String Surname;
     @SerializedName("username")
     private String Username;
-    @SerializedName("mail")
+    @SerializedName("email")
     private String Mail;
     @SerializedName("password")
     private String Password;
@@ -25,10 +26,14 @@ public class User extends EntityBase{
     @SerializedName("followings")
     private List<Question> Followings;
 
-    public User(String name, String surname, String username, String mail, String password) {
+    public User()
+    {
+
+    }
+
+    public User(String name, String surname, String mail, String password) {
         Name = name;
         Surname = surname;
-        Username = username;
         Mail = mail;
         Password = password;
     }

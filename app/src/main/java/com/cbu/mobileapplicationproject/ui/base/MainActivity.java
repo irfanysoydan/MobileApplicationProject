@@ -21,6 +21,8 @@ import com.cbu.mobileapplicationproject.PostRecyclerAdapter;
 import com.cbu.mobileapplicationproject.R;
 import com.cbu.mobileapplicationproject.databinding.ActivityLoginBinding;
 import com.cbu.mobileapplicationproject.databinding.ActivityMainBinding;
+import com.cbu.mobileapplicationproject.entities.concrete.User;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.w3c.dom.Text;
 
@@ -39,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActivityMainBinding viewBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(viewBinding.getRoot());
+
+        User myUser = (User) getIntent().getSerializableExtra("user");
 
         projectName = (TextView) findViewById(R.id.txt_project);
         searchButton = (Button)findViewById(R.id.btn_search);

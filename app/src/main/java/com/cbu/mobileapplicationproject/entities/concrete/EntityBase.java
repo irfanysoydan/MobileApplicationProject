@@ -60,11 +60,11 @@ public class EntityBase implements IEntityBase {
         UpdatedUserId = updatedUserId;
     }
 
-    public boolean isDeleted() {
+    public boolean getIsDeleted() {
         return IsDeleted;
     }
 
-    public void setDeleted(boolean deleted) {
+    public void setIsDeleted(boolean deleted) {
         IsDeleted = deleted;
     }
 

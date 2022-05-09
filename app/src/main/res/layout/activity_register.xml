@@ -93,7 +93,6 @@
         </LinearLayout>
 
 
-
         <EditText
             android:id="@+id/register_txt_email"
             android:layout_width="match_parent"
@@ -119,7 +118,7 @@
             android:layout_marginRight="40dp"
             android:background="@drawable/edittext"
             android:hint="Şifre"
-            android:inputType="textEmailAddress"
+            android:inputType="textPassword"
             android:padding="13dp"
             android:textColorHint="@color/prime_dark_green"
             android:textSize="13dp" />
@@ -134,7 +133,7 @@
             android:layout_marginRight="40dp"
             android:background="@drawable/edittext"
             android:hint="Şifreyi Doğrula"
-            android:inputType="textEmailAddress"
+            android:inputType="textPassword"
             android:padding="13dp"
             android:textColorHint="@color/prime_dark_green"
             android:textSize="13dp" />

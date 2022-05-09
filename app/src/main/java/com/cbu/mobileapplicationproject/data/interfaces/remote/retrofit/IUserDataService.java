@@ -16,29 +16,28 @@ import retrofit2.http.Part;
 import retrofit2.http.Path;
 
 public interface IUserDataService{
-    @Headers({
-            "app-id: 627302e21afb663b1f7ca379"
-    })
-    @GET("user")
+
+    @GET("User")
     Call<User> getAllData();
 
-    @GET("user/{id}")
+    @GET("User/{id}")
     Call<User> getOneData(@Path("id") int id);
 
-    @POST("user")
+    @POST("User")
     Call<User> create(@Body User data);
 
-    @PUT("user")
+
+    @PUT("User")
     Call<User> update(
             @Part("name") RequestBody name,
             @Part("surname") RequestBody surname,
             @Part("username") RequestBody username,
-            @Part("mail") RequestBody mail,
+            @Part("email") RequestBody email,
             @Part("password") RequestBody password,
             @Part("is_verified") RequestBody is_verified,
             @Part("auth_level") RequestBody authLevel,
             @Part("followings") RequestBody followings);
 
-    @DELETE("user/{id}")
+    @DELETE("User/{id}")
     Call<User> delete(@Path("id") int id);
 }
