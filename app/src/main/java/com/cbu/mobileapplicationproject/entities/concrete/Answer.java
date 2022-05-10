@@ -2,24 +2,22 @@ package com.cbu.mobileapplicationproject.entities.concrete;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Answer extends EntityBase{
+import java.io.Serializable;
 
+public class Answer extends EntityBase implements Serializable {
+
+    @SerializedName("contentId")
+    private int ContentId;
     @SerializedName("content")
     private Content Content;
-    @SerializedName("question_id")
+    @SerializedName("questionId")
     private int QuestionId;
-    @SerializedName("is_verified")
+    @SerializedName("isVerified")
     private Boolean IsVerified;
     @SerializedName("userId")
     private int UserId;
 
-    public int getUserId() {
-        return UserId;
-    }
-
-    public void setUserId(int userId) {
-        UserId = userId;
-    }
+    private User User;
 
     public User getUser() {
         return User;
@@ -29,7 +27,21 @@ public class Answer extends EntityBase{
         User = user;
     }
 
-    private User User;
+    public int getContentId() {
+        return ContentId;
+    }
+
+    public void setContentId(int contentId) {
+        ContentId = contentId;
+    }
+
+    public int getUserId() {
+        return UserId;
+    }
+
+    public void setUserId(int userId) {
+        UserId = userId;
+    }
 
     public Content getContent() {
         return Content;

@@ -38,6 +38,7 @@ public class RegisterViewModel extends ViewModel {
             public void onResponse(Call<User> call, Response<User> response) {
                 Log.e("id yazdim", ""+response.body().getId() );
                 Intent intent = new Intent(context, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
             @Override

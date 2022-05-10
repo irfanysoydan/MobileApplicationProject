@@ -8,7 +8,7 @@
     android:background="@drawable/shadow">
 
     <TextView
-        android:id="@+id/post_title"
+        android:id="@+id/question_tv_title"
         android:layout_width="276dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -18,19 +18,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/profile_icon"
-        app:layout_constraintTop_toBottomOf="@+id/date_info" />
+        app:layout_constraintTop_toBottomOf="@+id/question_tv_date" />
 
     <TextView
-        android:id="@+id/date_info"
+        android:id="@+id/question_tv_date"
         android:layout_width="wrap_content"
         android:layout_height="18dp"
         android:text="18.02.2022"
         android:textSize="10dp"
         app:layout_constraintStart_toEndOf="@+id/profile_icon"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/question_tv_name" />
 
     <TextView
-        android:id="@+id/username"
+        android:id="@+id/question_tv_name"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:text="Yusuf Topkaya"

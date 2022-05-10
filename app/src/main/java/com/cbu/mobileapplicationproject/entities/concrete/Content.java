@@ -2,10 +2,11 @@ package com.cbu.mobileapplicationproject.entities.concrete;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Content extends EntityBase{
+public class Content extends EntityBase implements Serializable {
 
     @SerializedName("text")
     private String Text;

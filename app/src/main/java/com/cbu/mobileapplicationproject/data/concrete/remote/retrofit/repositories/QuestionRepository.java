@@ -20,7 +20,8 @@ import retrofit2.Response;
 
 public class QuestionRepository {
     private ArrayList<Question> questions = new ArrayList<>();
-    private MutableLiveData<List<Question>> mutableLiveData = new MutableLiveData<>();
+    private MutableLiveData<List<Question>> mutableQuestionsLiveData = new MutableLiveData<>();
+    private MutableLiveData<Question> mutableQuestionLiveData = new MutableLiveData<>();
     private Application application;
 
     public QuestionRepository(Application application) {
@@ -28,15 +29,14 @@ public class QuestionRepository {
     }
 
     public MutableLiveData<List<Question>> getAllQuesitonMutableLiveData() {
-        IQuestionDataService userDataService = RetrofitInstance.getRetrofitInstance().create(IQuestionDataService.class);
-        Call<List<Question>> call = userDataService.getAllData();
+        IQuestionDataService questionDataService = RetrofitInstance.getRetrofitInstance().create(IQuestionDataService.class);
+        Call<List<Question>> call = questionDataService.getAllData();
         call.enqueue(new Callback<List<Question>>() {
             @Override
             public void onResponse(Call<List<Question>> call, Response<List<Question>> response) {
                 List<Question> questions = response.body();
-
                 if (questions != null) {
-                    mutableLiveData.setValue(questions);
+                    mutableQuestionsLiveData.setValue(questions);
                 }
             }
             @Override
@@ -44,6 +44,27 @@ public class QuestionRepository {
                 Log.e("Question Hata"," - > Error    "+ t.getMessage());
             }
         });
-        return mutableLiveData;
+        return mutableQuestionsLiveData;
+    }
+
+    public MutableLiveData<Question> createQuestionMutableLiveData(Question question){
+        IQuestionDataService questionDataService = RetrofitInstance.getRetrofitInstance().create(IQuestionDataService.class);
+        Call<Question> call = questionDataService.create(question);
+        call.enqueue(new Callback<Question>() {
+            @Override
+            public void onResponse(Call<Question> call, Response<Question> response) {
+                Question question = response.body();
+                Log.e("Response", response.body().toString());
+                if (question != null) {
+                    mutableQuestionLiveData.setValue(question);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Question> call, Throwable t) {
+                Log.e("Question Create Hata"," - > Error    "+ t.getMessage());
+            }
+        });
+        return mutableQuestionLiveData;
     }
 }

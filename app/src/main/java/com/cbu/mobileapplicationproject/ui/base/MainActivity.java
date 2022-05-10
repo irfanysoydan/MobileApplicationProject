@@ -3,14 +3,14 @@ package com.cbu.mobileapplicationproject.ui.base;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -23,20 +23,18 @@ import android.widget.TextView;
 
 import com.cbu.mobileapplicationproject.Post;
 import com.cbu.mobileapplicationproject.entities.concrete.Question;
-import com.cbu.mobileapplicationproject.ui.adapter.PostRecyclerAdapter;
+import com.cbu.mobileapplicationproject.ui.adapter.ItemClickListener;
 import com.cbu.mobileapplicationproject.R;
 import com.cbu.mobileapplicationproject.databinding.ActivityMainBinding;
-import com.cbu.mobileapplicationproject.entities.concrete.User;
 import com.cbu.mobileapplicationproject.ui.adapter.QuestionRecyclerAdapter;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.security.auth.login.LoginException;
-
 import model.MainViewModel;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ItemClickListener {
 
     private ArrayList<Post> posts;
 
@@ -61,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         editSearch = (EditText)findViewById(R.id.edittext_search);
         editSearch.setVisibility(View.INVISIBLE);
 
-        mainViewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+        mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,25 +91,41 @@ public class MainActivity extends AppCompatActivity {
                 filter(editable.toString());
             }
         });
-        getUserList();
+
+
+        viewBinding.mainBtnAddQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, PostingActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //viewSettings();
         //fillTheArray();
        // questionRecyclerAdapter.notifyDataSetChanged();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getUserList();
+    }
+
     public void getUserList() {
         // swipeRefresh.setRefreshing(true);
         mainViewModel.getAllQuestion().observe(this, new Observer<List<Question>>() {
             @Override
-            public void onChanged(@Nullable List<Question> questions) {
+            public void onChanged(@Nullable List<Question> qs) {
                 //swipeRefresh.setRefreshing(false);
-                setRecyclerView(questions);
+                questions = qs;
+                setRecyclerView(qs);
             }
         });
 
     }
     private void setRecyclerView(List<Question> questions) {
-        questionRecyclerAdapter = new QuestionRecyclerAdapter(questions);
+        questionRecyclerAdapter = new QuestionRecyclerAdapter(questions,this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(questionRecyclerAdapter);
@@ -147,5 +161,13 @@ public class MainActivity extends AppCompatActivity {
        // questionRecyclerAdapter = new QuestionRecyclerAdapter(questions);
        // recyclerView.setAdapter(questionRecyclerAdapter);
         //recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    @Override
+    public void onClick(View view, int position) {
+        final Question question = questions.get(position);
+        Intent intent = new Intent(getApplicationContext(),CommentActivity.class);
+        intent.putExtra("question",(Serializable) question);
+        startActivity(intent);
     }
 }

@@ -1,6 +1,5 @@
 package com.cbu.mobileapplicationproject.ui.adapter;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,20 +9,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.cbu.mobileapplicationproject.Post;
 import com.cbu.mobileapplicationproject.R;
 import com.cbu.mobileapplicationproject.entities.concrete.Question;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionRecyclerAdapter extends RecyclerView.Adapter<QuestionRecyclerAdapter.BaseViewHolder>   {
 
     private List<Question> questions;
+    private ItemClickListener onClickListener;
 
-    public QuestionRecyclerAdapter(List<Question> questions){
+    public QuestionRecyclerAdapter(List<Question> questions, ItemClickListener onClickListener){
         this.questions = questions;
+        this.onClickListener = onClickListener;
     }
     @Override
     public void onBindViewHolder(@NonNull BaseViewHolder holder, int position) {
@@ -35,7 +34,7 @@ public class QuestionRecyclerAdapter extends RecyclerView.Adapter<QuestionRecycl
     @Override
     public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.post_single_item,parent, false);
-        return new QuestionRecyclerAdapter.MyViewHolder(view);
+        return new QuestionRecyclerAdapter.MyViewHolder(view,onClickListener);
     }
 
     @Override
@@ -47,19 +46,25 @@ public class QuestionRecyclerAdapter extends RecyclerView.Adapter<QuestionRecycl
         return questions.size();
     }
 
-
-    public class MyViewHolder extends BaseViewHolder {
+    public class MyViewHolder extends BaseViewHolder implements View.OnClickListener  {
 
         TextView tvName,tvDate,tvTitle;
         ImageView imgLogo;
-        public MyViewHolder(@NonNull View itemView) {
-            super(itemView);
-            imgLogo = itemView.findViewById(R.id.profile_icon);
-            tvName = itemView.findViewById(R.id.username);
-            tvDate = itemView.findViewById(R.id.date_info);
-            tvTitle = itemView.findViewById(R.id.post_title);
-        }
+        private ItemClickListener clickListener;
 
+        public MyViewHolder(@NonNull View itemView, ItemClickListener clickListener) {
+            super(itemView);
+            this.clickListener = clickListener;
+            imgLogo = itemView.findViewById(R.id.profile_icon);
+            tvName = itemView.findViewById(R.id.question_tv_name);
+            tvDate = itemView.findViewById(R.id.question_tv_date);
+            tvTitle = itemView.findViewById(R.id.question_tv_title);
+            itemView.setOnClickListener(this);
+        }
+        @Override
+        public void onClick(View view) {
+            if (clickListener != null) clickListener.onClick(view, getAdapterPosition());
+        }
         protected void clear(){
             tvName.setText("");
             tvDate.setText("");
@@ -81,8 +86,9 @@ public class QuestionRecyclerAdapter extends RecyclerView.Adapter<QuestionRecycl
             if (question.getUser().getName() != null) {
                 tvName.setText(question.getUser().getName());
             }
-
         }
+
+
     }
     public abstract class BaseViewHolder extends RecyclerView.ViewHolder {
         private int mCurrentPosition;

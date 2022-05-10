@@ -52,6 +52,7 @@ public class LoginViewModel extends ViewModel {
                    Log.e("Status", "onResponse: elhamdülillah girdik");
                    Log.e("Status", response.body().getId()+"");
                    Intent intent = new Intent(context, MainActivity.class);
+                   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                    context.startActivity(intent);
                }
                else

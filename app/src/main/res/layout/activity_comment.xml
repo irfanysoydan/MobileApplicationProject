@@ -71,7 +71,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <include layout="@layout/question"/>
+                <include
+                    android:id="@+id/answer_frame_question"
+                    layout="@layout/question" />
 
             </LinearLayout>
 
@@ -120,7 +122,7 @@
 
 
           <Button
-              android:id="@+id/register_btn_collection2"
+              android:id="@+id/main_btn_add_question"
               android:layout_width="36dp"
               android:layout_height="36dp"
               android:layout_centerVertical="true"
