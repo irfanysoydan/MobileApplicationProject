@@ -3,6 +3,8 @@ package com.cbu.mobileapplicationproject.data.interfaces.remote.retrofit;
 import com.cbu.mobileapplicationproject.entities.concrete.Question;
 import com.cbu.mobileapplicationproject.entities.concrete.User;
 
+import java.util.List;
+
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -14,17 +16,18 @@ import retrofit2.http.Part;
 import retrofit2.http.Path;
 
 public interface IQuestionDataService {
-    @GET("question")
-    Call<Question> getAllData();
+    @GET("Questions")
+    Call<List<Question>> getAllData();
 
-    @GET("question/{id}")
+    @GET("Questions/{id}")
     Call<Question> getOneData(@Path("id") int id);
 
-    @POST("question")
+    @POST("Questions")
     Call<Question> create(@Body Question data);
 
-    @PUT("question")
+    @PUT("Questions/{id}")
     Call<Question> update(
+            @Path("id") int id,
             @Part("title") RequestBody title,
             @Part("content") RequestBody content,
             @Part("tags") RequestBody tags,
@@ -32,6 +35,6 @@ public interface IQuestionDataService {
             @Part("rate") RequestBody rate,
             @Part("answers") RequestBody answers);
 
-    @DELETE("question/{id}")
+    @DELETE("Questions/{id}")
     Call<Question> delete(@Path("id") int id);
 }

@@ -10,6 +10,26 @@ public class Answer extends EntityBase{
     private int QuestionId;
     @SerializedName("is_verified")
     private Boolean IsVerified;
+    @SerializedName("userId")
+    private int UserId;
+
+    public int getUserId() {
+        return UserId;
+    }
+
+    public void setUserId(int userId) {
+        UserId = userId;
+    }
+
+    public User getUser() {
+        return User;
+    }
+
+    public void setUser(User user) {
+        User = user;
+    }
+
+    private User User;
 
     public Content getContent() {
         return Content;

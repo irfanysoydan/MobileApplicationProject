@@ -51,7 +51,7 @@ public class RegisterViewModel extends ViewModel {
             }
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-                Log.e("Hata mesaji", t.getCause().toString() );
+                Log.e("Hata mesaji", t.toString() );
             }
         });
 

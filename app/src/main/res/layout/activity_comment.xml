@@ -21,17 +21,17 @@
           android:background="@drawable/ic_baseline_menu_24"
           android:backgroundTint="@color/prime_dark_green" />
 
-      <TextView
-          android:id="@+id/txt_project"
-          android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          android:layout_marginLeft="20dp"
-          android:layout_toEndOf="@+id/register_btn_hamburger"
-          android:fontFamily="@font/poppins_bold"
-          android:gravity="center"
-          android:text="NADAS"
-          android:textColor="@color/prime_dark_green"
-          android:textSize="25dp" />
+        <TextView
+            android:id="@+id/txt_project"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/register_btn_hamburger"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="NADAS"
+            android:textColor="@color/prime_dark_green"
+            android:textSize="25dp" />
 
 
       <Button
