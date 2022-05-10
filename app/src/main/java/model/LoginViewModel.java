@@ -28,10 +28,10 @@ public class LoginViewModel extends ViewModel {
     IUserDataService userDataService= RetrofitInstance.getRetrofitInstance().create(IUserDataService.class);
     public void LoginUser(String email, String password, Context context)
     {
-       User yUser=new User(email,password);
+        User yUser=new User(email,password);
         sp=context.getSharedPreferences("MyUserPrefs",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=sp.edit();
-       userDataService.login(yUser).enqueue(new Callback<User>() {
+        userDataService.login(yUser).enqueue(new Callback<User>() {
            @Override
            public void onResponse(Call<User> call, Response<User> response) {
 
@@ -52,7 +52,7 @@ public class LoginViewModel extends ViewModel {
                    Log.e("Status", "onResponse: elhamdülillah girdik");
                    Log.e("Status", response.body().getId()+"");
                    Intent intent = new Intent(context, MainActivity.class);
-                   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                   intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                    context.startActivity(intent);
                }
                else

@@ -25,6 +25,8 @@ public class Question extends EntityBase implements Serializable {
     @SerializedName("user")
     private User User;
 
+
+
     public Question(String title, Content content, List<Tag> tags, int viewCount, int rate, List<Answer> answers, int userId, User user) {
         Title = title;
         Content = content;

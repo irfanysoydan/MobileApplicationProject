@@ -2,15 +2,22 @@ package com.cbu.mobileapplicationproject.ui.base;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -61,6 +68,18 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Update";
+            String description = "New questions";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("my_channel", name, importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,12 +124,37 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
         //fillTheArray();
        // questionRecyclerAdapter.notifyDataSetChanged();
     }
-
     @Override
     protected void onResume() {
+        int eski,yeni=0;
+
+        sp=getSharedPreferences("MyUserPrefs",Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=sp.edit();
+        eski=sp.getInt("question_count",0);
+
+        if(recyclerView.getAdapter()!=null)
+        {
+            yeni=recyclerView.getAdapter().getItemCount();
+            editor.putInt("question_count",yeni);
+        }
+
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "a")
+                .setSmallIcon(R.drawable.profile_icon)
+                .setContentTitle("NADAS")
+                .setContentText(yeni-eski+" yeni soru var!")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(MainActivity.this);
+
+        if(yeni>eski){
+            notificationManager.notify(0, builder.build());
+        }
         super.onResume();
         getUserList();
     }
+
+
 
     public void getUserList() {
         // swipeRefresh.setRefreshing(true);
