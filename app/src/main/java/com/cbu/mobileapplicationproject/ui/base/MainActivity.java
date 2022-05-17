@@ -201,4 +201,12 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
         intent.putExtra("question",(Serializable) question);
         startActivity(intent);
     }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(getApplicationContext(),LandingActivity.class);
+        startActivity(intent);
+    }
+
 }

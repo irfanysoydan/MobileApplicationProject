@@ -85,7 +85,7 @@
             android:layout_marginBottom="40dp"
             android:background="@drawable/edittext"
             android:hint="Konu başlığını giriniz..."
-            android:maxLength="40"
+            android:maxLength="100"
             android:padding="10dp"
             android:textAlignment="textStart"
             android:textColorHint="@color/prime_dark_green"
@@ -102,7 +102,7 @@
             android:background="@drawable/edittext"
             android:gravity="top"
             android:hint="Sormak istediğiniz soruyu giriniz..."
-            android:maxLength="400"
+            android:maxLength="600"
             android:padding="10dp"
             android:textColorHint="@color/prime_dark_green"
             android:textSize="15dp" />

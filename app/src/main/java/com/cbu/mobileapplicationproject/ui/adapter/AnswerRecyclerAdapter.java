@@ -65,7 +65,7 @@ public class AnswerRecyclerAdapter extends RecyclerView.Adapter<AnswerRecyclerAd
         public MyViewHolder(@NonNull View itemView, ItemClickListener clickListener,Context context) {
             super(itemView);
             this.clickListener = clickListener;
-            imgLogo = itemView.findViewById(R.id.profile_icon);
+            imgLogo = itemView.findViewById(R.id.comment_icon);
             tvName = itemView.findViewById(R.id.comment_user);
             tvText = itemView.findViewById(R.id.commenter_text);
             this.context =context;
@@ -93,6 +93,7 @@ public class AnswerRecyclerAdapter extends RecyclerView.Adapter<AnswerRecyclerAd
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
                     tvName.setText(response.body().getName());
+                    imgLogo.setImageResource(R.drawable.profile_icon);
                 }
 
                 @Override
@@ -100,6 +101,7 @@ public class AnswerRecyclerAdapter extends RecyclerView.Adapter<AnswerRecyclerAd
 
                 }
             });
+
         }
     }
     public abstract class BaseViewHolder extends RecyclerView.ViewHolder {

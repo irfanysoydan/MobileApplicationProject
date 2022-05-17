@@ -71,6 +71,7 @@ public class CommentActivity extends AppCompatActivity implements ItemClickListe
         viewBinding.answerFrameQuestion.questionBtnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(!viewBinding.answerFrameQuestion.questionEtAnswer.getText().toString().matches("")){
                 Content content =  new Content();
                 content.setText(viewBinding.answerFrameQuestion.questionEtAnswer.getText().toString());
                 answer = new Answer();
@@ -84,6 +85,15 @@ public class CommentActivity extends AppCompatActivity implements ItemClickListe
                         answer = qs;
                     }
                 });
+                questionDetailViewModel.GetAllByQuestionId(question.getId()).observe(CommentActivity.this, new Observer<List<Answer>>() {
+                    @Override
+                    public void onChanged(@Nullable List<Answer> a) {
+                        answers = a;
+                        setRecyclerView(answers);
+                    }
+                });
+                viewBinding.answerFrameQuestion.questionEtAnswer.setText("");
+            }
             }
         });
     }

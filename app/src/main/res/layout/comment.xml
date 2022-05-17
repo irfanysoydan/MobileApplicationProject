@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="30dp"
-    android:background="@drawable/shadow">
+    android:background="@drawable/shadow"
+    android:paddingBottom="12dp"
+    >
 
     <ImageView
         android:id="@+id/comment_icon"
@@ -26,10 +28,12 @@
 
     <TextView
         android:id="@+id/commenter_text"
+
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:lineSpacingExtra="5dp"
-        android:padding="5dp"
+        android:paddingHorizontal="5dp"
+        android:paddingTop="12dp"
         android:text="Lorem ipsum dolor sit e et dolore magna  asdasdasdasdasdasdasdas dasdasd asd asd asd asdaliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proid"
         android:textColor="@color/black"
         android:textSize="15dp"
