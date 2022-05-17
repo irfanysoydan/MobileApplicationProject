@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
     private TextView projectName;
     private EditText editSearch;
     private SharedPreferences sp;
+    private int eski,yeni=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "Update";
             String description = "New questions";
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
@@ -126,46 +127,32 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
     }
     @Override
     protected void onResume() {
-        int eski,yeni=0;
 
-        sp=getSharedPreferences("MyUserPrefs",Context.MODE_PRIVATE);
+
+        sp=getSharedPreferences("Count",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=sp.edit();
         eski=sp.getInt("question_count",0);
 
-
-
-
-
-      /*  mainViewModel.getQuestionCount().observe(this, new Observer<Object>() {
+        mainViewModel.getQuestionCount().observe(this, new Observer<Object>() {
            @Override
            public void onChanged(@Nullable Object obj) {
-              int yeni = (int)((double) obj);
+
+               yeni = (int)((double) obj);
                editor.putInt("question_count",yeni);
-               NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "a")
+               editor.apply();
+               NotificationManagerCompat notificationManager = NotificationManagerCompat.from(MainActivity.this);
+               NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "my_channel")
                        .setSmallIcon(R.drawable.profile_icon)
                        .setContentTitle("NADAS")
                        .setContentText(yeni-eski+" yeni soru var!")
                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-
+               if(yeni>eski){
+                   eski=yeni;
+                   notificationManager.notify(0, builder.build());
+               }
 
            }
-        });*/
-        if(recyclerView.getAdapter()!=null)
-        {
-            yeni=recyclerView.getAdapter().getItemCount();
-            editor.putInt("question_count",yeni);
-        }
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(MainActivity.this);
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "a")
-                .setSmallIcon(R.drawable.profile_icon)
-                .setContentTitle("NADAS")
-                .setContentText(yeni-eski+" yeni soru var!")
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-        if(yeni>eski){
-            notificationManager.notify(0, builder.build());
-            Log.e("TAG", "bişey" );
-        }
-
+        });
 
 
         super.onResume();
@@ -206,24 +193,6 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
       // questionRecyclerAdapter.filterList(filteredList);
     }
 
-    private void fillTheArray(){
-
-       /* posts.add(new Post(R.drawable.profile_icon, "Yusuf Topkaya", "25 Nisan", "Traktörlerin Uşağa giderken fazla hararet yapması"));
-        posts.add(new Post(R.drawable.profile_icon, "İrfan Yunus Soydan", "25 Nisan", "Çim biçme makinelerinin çim gelişimi üzerine etkisi"));
-        posts.add(new Post(R.drawable.profile_icon, "Ömer Özoğlu", "25 Nisan", "Konyadaki verimli arazilerin yapay gübre kullanılarak harcanması"));
-        posts.add(new Post(R.drawable.profile_icon, "Recep Şen", "25 Nisan", "Turunçgillerdeki vitamin miktarının nasıl artırılacağı"));
-        posts.add(new Post(R.drawable.profile_icon, "Hikmet Gezmen", "25 Nisan", "Suriyeli Mültecilerin Hataydaki topraklar üzerine etkisi"));
-        posts.add(new Post(R.drawable.profile_icon, "Halil Furkan Deniz", "25 Nisan", "Gaziosmanpaşa halkının yarısının meyvesi bıçak olan bir ağaç üretimini istemesi"));
-        posts.add(new Post(R.drawable.profile_icon, "Yusuf Özçevik", "25 Nisan", "Yusuf Özçevik"));
-        posts.add(new Post(R.drawable.profile_icon, "Müge Özçevik", "25 Nisan", "Müge Özçevik"));*/
-    }
-    private void viewSettings(){
-       // recyclerView = findViewById(R.id.recyclerview);
-        posts = new ArrayList<>();
-       // questionRecyclerAdapter = new QuestionRecyclerAdapter(questions);
-       // recyclerView.setAdapter(questionRecyclerAdapter);
-        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
 
     @Override
     public void onClick(View view, int position) {
