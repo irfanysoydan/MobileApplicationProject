@@ -49,7 +49,6 @@ public class LoginViewModel extends ViewModel {
                    editor.putString("email",response.body().getMail());
                    editor.putString("password",response.body().getPassword());
                    editor.apply();
-                   Log.e("Status", "onResponse: elhamdülillah girdik");
                    Log.e("Status", response.body().getId()+"");
                    Intent intent = new Intent(context, MainActivity.class);
                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -67,7 +66,7 @@ public class LoginViewModel extends ViewModel {
 
            @Override
            public void onFailure(Call<User> call, Throwable t) {
-               Log.e("Status", "onResponse: sıkıntılandık");
+               Log.e("Status", "onResponse: Hata");
            }
        });
     }

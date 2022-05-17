@@ -19,6 +19,9 @@ public interface IQuestionDataService {
     @GET("Questions")
     Call<List<Question>> getAllData();
 
+    @GET("Questions/QuestionCount")
+    Call<Object> getQuestionCount();
+
     @GET("Questions/{id}")
     Call<Question> getOneData(@Path("id") int id);
 

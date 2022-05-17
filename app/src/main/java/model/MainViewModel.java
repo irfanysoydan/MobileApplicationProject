@@ -22,4 +22,8 @@ public class MainViewModel extends AndroidViewModel {
     public LiveData<List<Question>> getAllQuestion() {
         return questionRepository.getAllQuesitonMutableLiveData();
     }
+
+    public LiveData<Object> getQuestionCount() {
+        return questionRepository.getQuestionCount();
+    }
 }

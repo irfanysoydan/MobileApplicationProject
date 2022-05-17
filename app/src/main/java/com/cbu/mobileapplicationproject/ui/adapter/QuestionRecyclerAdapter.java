@@ -86,9 +86,8 @@ public class QuestionRecyclerAdapter extends RecyclerView.Adapter<QuestionRecycl
             if (question.getUser().getName() != null) {
                 tvName.setText(question.getUser().getName());
             }
+            imgLogo.setImageResource(R.drawable.profile_icon);
         }
-
-
     }
     public abstract class BaseViewHolder extends RecyclerView.ViewHolder {
         private int mCurrentPosition;

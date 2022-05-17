@@ -1,10 +1,12 @@
 package com.cbu.mobileapplicationproject.ui.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -57,11 +59,13 @@ public class AnswerRecyclerAdapter extends RecyclerView.Adapter<AnswerRecyclerAd
     public class MyViewHolder extends BaseViewHolder implements View.OnClickListener  {
         Context context;
         TextView tvName,tvText;
+        ImageView imgLogo;
         private ItemClickListener clickListener;
 
         public MyViewHolder(@NonNull View itemView, ItemClickListener clickListener,Context context) {
             super(itemView);
             this.clickListener = clickListener;
+            imgLogo = itemView.findViewById(R.id.profile_icon);
             tvName = itemView.findViewById(R.id.comment_user);
             tvText = itemView.findViewById(R.id.commenter_text);
             this.context =context;
@@ -76,6 +80,7 @@ public class AnswerRecyclerAdapter extends RecyclerView.Adapter<AnswerRecyclerAd
             tvText.setText("");
         }
 
+        @SuppressLint("ResourceType")
         public void onBind(int position) {
             super.onBind(position);
             final Answer answer = answers.get(position);
@@ -95,8 +100,6 @@ public class AnswerRecyclerAdapter extends RecyclerView.Adapter<AnswerRecyclerAd
 
                 }
             });
-
-
         }
     }
     public abstract class BaseViewHolder extends RecyclerView.ViewHolder {

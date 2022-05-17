@@ -22,6 +22,7 @@ public class QuestionRepository {
     private ArrayList<Question> questions = new ArrayList<>();
     private MutableLiveData<List<Question>> mutableQuestionsLiveData = new MutableLiveData<>();
     private MutableLiveData<Question> mutableQuestionLiveData = new MutableLiveData<>();
+    private MutableLiveData<Object> mutableQuestionCountLiveData = new MutableLiveData<>();
     private Application application;
 
     public QuestionRepository(Application application) {
@@ -45,6 +46,24 @@ public class QuestionRepository {
             }
         });
         return mutableQuestionsLiveData;
+    }
+
+    public MutableLiveData<Object> getQuestionCount(){
+        IQuestionDataService questionDataService = RetrofitInstance.getRetrofitInstance().create(IQuestionDataService.class);
+        Call<Object> call = questionDataService.getQuestionCount();
+        call.enqueue(new Callback<Object>() {
+            @Override
+            public void onResponse(Call<Object> call, Response<Object> response) {
+                Log.e("Sayı", response.body().toString());
+                mutableQuestionCountLiveData.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<Object> call, Throwable t) {
+
+            }
+        });
+        return mutableQuestionCountLiveData;
     }
 
     public MutableLiveData<Question> createQuestionMutableLiveData(Question question){

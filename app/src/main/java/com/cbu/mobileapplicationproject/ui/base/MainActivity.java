@@ -132,24 +132,42 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
         SharedPreferences.Editor editor=sp.edit();
         eski=sp.getInt("question_count",0);
 
+
+
+
+
+      /*  mainViewModel.getQuestionCount().observe(this, new Observer<Object>() {
+           @Override
+           public void onChanged(@Nullable Object obj) {
+              int yeni = (int)((double) obj);
+               editor.putInt("question_count",yeni);
+               NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "a")
+                       .setSmallIcon(R.drawable.profile_icon)
+                       .setContentTitle("NADAS")
+                       .setContentText(yeni-eski+" yeni soru var!")
+                       .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+
+           }
+        });*/
         if(recyclerView.getAdapter()!=null)
         {
             yeni=recyclerView.getAdapter().getItemCount();
             editor.putInt("question_count",yeni);
         }
-
-
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(MainActivity.this);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "a")
                 .setSmallIcon(R.drawable.profile_icon)
                 .setContentTitle("NADAS")
                 .setContentText(yeni-eski+" yeni soru var!")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(MainActivity.this);
-
         if(yeni>eski){
             notificationManager.notify(0, builder.build());
+            Log.e("TAG", "bişey" );
         }
+
+
+
         super.onResume();
         getUserList();
     }

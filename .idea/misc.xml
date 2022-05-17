@@ -3,11 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/layout/activity_comment.xml" value="0.284737067122702" />
         <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/layout/activity_landing.xml" value="0.2937152629328773" />
         <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/layout/activity_login.xml" value="0.2937152629328773" />
-        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/layout/activity_main.xml" value="0.20179563916203505" />
+        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/layout/activity_main.xml" value="0.67" />
         <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/layout/activity_main_page.xml" value="0.1" />
+        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/layout/activity_posting.xml" value="0.284737067122702" />
         <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/layout/activity_register.xml" value="0.2937152629328773" />
+        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/layout/comment.xml" value="0.39913232104121477" />
+        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/layout/post_single_item.xml" value="0.12740487387772553" />
+        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/layout/question.xml" value="0.284737067122702" />
+        <entry key="..\:/PersonalStorage/Projects/MobileApplicationProject/app/src/main/res/layout/single_row.xml" value="0.1" />
         <entry key="..\:/Users/90551/AndroidStudioProjects/MobileApplicationProject/app/src/main/res/layout/activity_landing.xml" value="0.1" />
         <entry key="..\:/Users/90551/AndroidStudioProjects/MobileApplicationProject/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/90551/AndroidStudioProjects/MobileApplicationProject/app/src/main/res/layout/activity_main.xml" value="0.1" />
