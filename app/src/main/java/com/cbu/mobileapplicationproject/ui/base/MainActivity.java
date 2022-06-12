@@ -19,6 +19,8 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -27,6 +29,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cbu.mobileapplicationproject.Post;
 import com.cbu.mobileapplicationproject.entities.concrete.Question;
@@ -49,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
     private RecyclerView recyclerView;
     private MainViewModel mainViewModel;
     private QuestionRecyclerAdapter questionRecyclerAdapter;
-
+    private boolean doubleBackToExitPressedOnce = false;
     private Button searchButton;
     private TextView projectName;
     private EditText editSearch;
@@ -202,11 +205,25 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
         startActivity(intent);
     }
 
+
+
     @Override
     public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            Log.e("Aboo", "Tekrar bastın knks" );
+            finishAndRemoveTask();
+            return;
+        }
 
-        Intent intent = new Intent(getApplicationContext(),LandingActivity.class);
-        startActivity(intent);
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Çıkış yapmak için tekrar geri tuşuna basın.", Toast.LENGTH_SHORT).show();
+
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
-
 }

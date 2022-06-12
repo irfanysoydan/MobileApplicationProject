@@ -54,7 +54,6 @@ public class QuestionRepository {
         call.enqueue(new Callback<Object>() {
             @Override
             public void onResponse(Call<Object> call, Response<Object> response) {
-                Log.e("Sayı", response.body().toString());
                 mutableQuestionCountLiveData.setValue(response.body());
             }
 

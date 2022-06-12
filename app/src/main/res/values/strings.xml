@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">App Name</string>
+    <string name="app_name">NADAS</string>
     <string name="app_welcome">Tekrar Hoşgeldin</string>
     <string name="app_welcome_sub">Hesabına giriş yap</string>
     <string name="app_register_sub">Hesap oluştur</string>

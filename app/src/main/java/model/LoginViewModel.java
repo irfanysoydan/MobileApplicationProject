@@ -49,10 +49,7 @@ public class LoginViewModel extends ViewModel {
                    editor.putString("email",response.body().getMail());
                    editor.putString("password",response.body().getPassword());
                    editor.apply();
-                   Log.e("Status", response.body().getId()+"");
-                   Intent intent = new Intent(context, MainActivity.class);
-                   intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                   context.startActivity(intent);
+
                }
                else
                {

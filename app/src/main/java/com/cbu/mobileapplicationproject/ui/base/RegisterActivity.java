@@ -44,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             if (Pass.getText().toString().trim().length() > 0 && Pass.getText().toString().equals(RePass.getText().toString())) {
                 viewModel.CreateUser(Name.getText().toString(), SName.getText().toString(), Email.getText().toString(), Pass.getText().toString(), this.getApplicationContext());
+                finish();
             } else {
                 Snackbar.make(view, "Hatalı giriş", Snackbar.LENGTH_SHORT).show();
             }
@@ -56,6 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

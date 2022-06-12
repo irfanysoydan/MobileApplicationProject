@@ -48,8 +48,7 @@ public class PostingActivity extends AppCompatActivity {
                 questionViewModel.createQuestion(question).observe(PostingActivity.this, new Observer<Question>() {
                     @Override
                     public void onChanged(@Nullable Question question) {
-                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                        startActivity(intent);
+                        finish();
                     }
                 });
             }
