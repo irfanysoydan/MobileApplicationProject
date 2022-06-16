@@ -4,9 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,8 +14,6 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.cbu.mobileapplicationproject.Comment;
-import com.cbu.mobileapplicationproject.CommentRecyclerAdapter;
 import com.cbu.mobileapplicationproject.R;
 import com.cbu.mobileapplicationproject.databinding.ActivityCommentBinding;
 import com.cbu.mobileapplicationproject.entities.concrete.Answer;
@@ -25,15 +21,12 @@ import com.cbu.mobileapplicationproject.entities.concrete.Content;
 import com.cbu.mobileapplicationproject.entities.concrete.Question;
 import com.cbu.mobileapplicationproject.ui.adapter.AnswerRecyclerAdapter;
 import com.cbu.mobileapplicationproject.ui.adapter.ItemClickListener;
-import com.cbu.mobileapplicationproject.ui.adapter.QuestionRecyclerAdapter;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.MainViewModel;
 import model.QuestionDetailViewModel;
-import model.QuestionViewModel;
 
 
 public class CommentActivity extends AppCompatActivity implements ItemClickListener {
@@ -43,9 +36,7 @@ public class CommentActivity extends AppCompatActivity implements ItemClickListe
     private List<Answer> answers;
     private SharedPreferences sp;
 
-    private ArrayList<Comment> comments;
     private RecyclerView recyclerView;
-    private CommentRecyclerAdapter commentRecyclerAdapter;
     private AnswerRecyclerAdapter answerRecyclerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,33 +111,6 @@ public class CommentActivity extends AppCompatActivity implements ItemClickListe
         answerRecyclerAdapter.notifyDataSetChanged();
     }
 
-    private void fillTheArrayC(){
-
-        comments.add(new Comment(R.drawable.profile_icon,"Ömer Özoğlu","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque adipiscing commodo elit at imperdiet. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Arcu felis bibendum ut tristique et. Facilisis magna etiam tempor orci eu lobortis. Facilisis mauris sit amet massa vitae. Cursus sit amet dictum sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Mauris sit amet massa vitae tortor condimentum lacinia. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Sagittis vitae et leo duis."));
-        comments.add(new Comment(R.drawable.profile_icon,"Ömer Özoğlu","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque adipiscing commodo elit at imperdiet. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Arcu felis bibendum ut tristique et. Facilisis magna etiam tempor orci eu lobortis. Facilisis mauris sit amet massa vitae. Cursus sit amet dictum sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Mauris sit amet massa vitae tortor condimentum lacinia. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Sagittis vitae et leo duis."));
-        comments.add(new Comment(R.drawable.profile_icon,"Ömer Özoğlu","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque adipiscing commodo elit at imperdiet. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Arcu felis bibendum ut tristique et. Facilisis magna etiam tempor orci eu lobortis. Facilisis mauris sit amet massa vitae. Cursus sit amet dictum sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Mauris sit amet massa vitae tortor condimentum lacinia. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Sagittis vitae et leo duis."));
-        comments.add(new Comment(R.drawable.profile_icon,"Ömer Özoğlu","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque adipiscing commodo elit at imperdiet. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Arcu felis bibendum ut tristique et. Facilisis magna etiam tempor orci eu lobortis. Facilisis mauris sit amet massa vitae. Cursus sit amet dictum sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Mauris sit amet massa vitae tortor condimentum lacinia. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Sagittis vitae et leo duis."));
-        comments.add(new Comment(R.drawable.profile_icon,"Ömer Özoğlu","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque adipiscing commodo elit at imperdiet. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Arcu felis bibendum ut tristique et. Facilisis magna etiam tempor orci eu lobortis. Facilisis mauris sit amet massa vitae. Cursus sit amet dictum sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Mauris sit amet massa vitae tortor condimentum lacinia. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Sagittis vitae et leo duis."));
-        comments.add(new Comment(R.drawable.profile_icon,"Ömer Özoğlu","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque adipiscing commodo elit at imperdiet. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Arcu felis bibendum ut tristique et. Facilisis magna etiam tempor orci eu lobortis. Facilisis mauris sit amet massa vitae. Cursus sit amet dictum sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Mauris sit amet massa vitae tortor condimentum lacinia. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Sagittis vitae et leo duis."));
-        comments.add(new Comment(R.drawable.profile_icon,"Ömer Özoğlu","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque adipiscing commodo elit at imperdiet. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Arcu felis bibendum ut tristique et. Facilisis magna etiam tempor orci eu lobortis. Facilisis mauris sit amet massa vitae. Cursus sit amet dictum sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Mauris sit amet massa vitae tortor condimentum lacinia. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Sagittis vitae et leo duis."));
-        comments.add(new Comment(R.drawable.profile_icon,"Ömer Özoğlu","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque adipiscing commodo elit at imperdiet. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Arcu felis bibendum ut tristique et. Facilisis magna etiam tempor orci eu lobortis. Facilisis mauris sit amet massa vitae. Cursus sit amet dictum sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Mauris sit amet massa vitae tortor condimentum lacinia. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Sagittis vitae et leo duis."));
-        comments.add(new Comment(R.drawable.profile_icon,"Ömer Özoğlu","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque adipiscing commodo elit at imperdiet. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Arcu felis bibendum ut tristique et. Facilisis magna etiam tempor orci eu lobortis. Facilisis mauris sit amet massa vitae. Cursus sit amet dictum sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Mauris sit amet massa vitae tortor condimentum lacinia. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Sagittis vitae et leo duis."));
-        comments.add(new Comment(R.drawable.profile_icon,"Ömer Özoğlu","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque adipiscing commodo elit at imperdiet. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Arcu felis bibendum ut tristique et. Facilisis magna etiam tempor orci eu lobortis. Facilisis mauris sit amet massa vitae. Cursus sit amet dictum sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Mauris sit amet massa vitae tortor condimentum lacinia. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Sagittis vitae et leo duis."));
-        comments.add(new Comment(R.drawable.profile_icon,"Ömer Özoğlu","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque adipiscing commodo elit at imperdiet. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Arcu felis bibendum ut tristique et. Facilisis magna etiam tempor orci eu lobortis. Facilisis mauris sit amet massa vitae. Cursus sit amet dictum sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Mauris sit amet massa vitae tortor condimentum lacinia. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Sagittis vitae et leo duis."));
-        comments.add(new Comment(R.drawable.profile_icon,"Ömer Özoğlu","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque adipiscing commodo elit at imperdiet. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Arcu felis bibendum ut tristique et. Facilisis magna etiam tempor orci eu lobortis. Facilisis mauris sit amet massa vitae. Cursus sit amet dictum sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Mauris sit amet massa vitae tortor condimentum lacinia. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Sagittis vitae et leo duis."));
-        comments.add(new Comment(R.drawable.profile_icon,"Ömer Özoğlu","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque adipiscing commodo elit at imperdiet. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Arcu felis bibendum ut tristique et. Facilisis magna etiam tempor orci eu lobortis. Facilisis mauris sit amet massa vitae. Cursus sit amet dictum sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Mauris sit amet massa vitae tortor condimentum lacinia. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Sagittis vitae et leo duis."));
-        comments.add(new Comment(R.drawable.profile_icon,"Ömer Özoğlu","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque adipiscing commodo elit at imperdiet. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Arcu felis bibendum ut tristique et. Facilisis magna etiam tempor orci eu lobortis. Facilisis mauris sit amet massa vitae. Cursus sit amet dictum sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Mauris sit amet massa vitae tortor condimentum lacinia. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Sagittis vitae et leo duis."));
-        comments.add(new Comment(R.drawable.profile_icon,"Ömer Özoğlu","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque adipiscing commodo elit at imperdiet. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Arcu felis bibendum ut tristique et. Facilisis magna etiam tempor orci eu lobortis. Facilisis mauris sit amet massa vitae. Cursus sit amet dictum sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Mauris sit amet massa vitae tortor condimentum lacinia. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Sagittis vitae et leo duis."));
-        comments.add(new Comment(R.drawable.profile_icon,"Ömer Özoğlu","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque adipiscing commodo elit at imperdiet. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam. Arcu felis bibendum ut tristique et. Facilisis magna etiam tempor orci eu lobortis. Facilisis mauris sit amet massa vitae. Cursus sit amet dictum sit. Porttitor rhoncus dolor purus non enim praesent elementum facilisis leo. Mauris sit amet massa vitae tortor condimentum lacinia. Orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Sagittis vitae et leo duis."));
-
-    }
-    private void viewSettingsC(){
-        recyclerView = findViewById(R.id.recyclerview_comment);
-        comments = new ArrayList<>();
-        commentRecyclerAdapter = new CommentRecyclerAdapter(comments);
-        recyclerView.setAdapter(commentRecyclerAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
 
     @Override
     public void onClick(View view, int position) {

@@ -31,7 +31,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cbu.mobileapplicationproject.Post;
 import com.cbu.mobileapplicationproject.entities.concrete.Question;
 import com.cbu.mobileapplicationproject.ui.adapter.ItemClickListener;
 import com.cbu.mobileapplicationproject.R;
@@ -45,8 +44,6 @@ import java.util.List;
 import model.MainViewModel;
 
 public class MainActivity extends AppCompatActivity implements ItemClickListener {
-
-    private ArrayList<Post> posts;
 
     private List<Question> questions;
     private RecyclerView recyclerView;
@@ -98,35 +95,11 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
             }
         });
 
-        editSearch.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                filter(editable.toString());
-            }
+        viewBinding.mainBtnAddQuestion.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, PostingActivity.class);
+            startActivity(intent);
         });
 
-
-        viewBinding.mainBtnAddQuestion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, PostingActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        //viewSettings();
-        //fillTheArray();
-       // questionRecyclerAdapter.notifyDataSetChanged();
     }
     @Override
     protected void onResume() {
@@ -136,25 +109,22 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
         SharedPreferences.Editor editor=sp.edit();
         eski=sp.getInt("question_count",0);
 
-        mainViewModel.getQuestionCount().observe(this, new Observer<Object>() {
-           @Override
-           public void onChanged(@Nullable Object obj) {
+        mainViewModel.getQuestionCount().observe(this, obj -> {
 
-               yeni = (int)((double) obj);
-               editor.putInt("question_count",yeni);
-               editor.apply();
-               NotificationManagerCompat notificationManager = NotificationManagerCompat.from(MainActivity.this);
-               NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "my_channel")
-                       .setSmallIcon(R.drawable.profile_icon)
-                       .setContentTitle("NADAS")
-                       .setContentText(yeni-eski+" yeni soru var!")
-                       .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-               if(yeni>eski){
-                   eski=yeni;
-                   notificationManager.notify(0, builder.build());
-               }
+            yeni = (int)((double) obj);
+            editor.putInt("question_count",yeni);
+            editor.apply();
+            NotificationManagerCompat notificationManager = NotificationManagerCompat.from(MainActivity.this);
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "my_channel")
+                    .setSmallIcon(R.drawable.profile_icon)
+                    .setContentTitle("NADAS")
+                    .setContentText(yeni-eski+" yeni soru var!")
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+            if(yeni>eski){
+                eski=yeni;
+                notificationManager.notify(0, builder.build());
+            }
 
-           }
         });
 
 
@@ -166,13 +136,10 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 
     public void getUserList() {
         // swipeRefresh.setRefreshing(true);
-        mainViewModel.getAllQuestion().observe(this, new Observer<List<Question>>() {
-            @Override
-            public void onChanged(@Nullable List<Question> qs) {
-                //swipeRefresh.setRefreshing(false);
-                questions = qs;
-                setRecyclerView(qs);
-            }
+        mainViewModel.getAllQuestion().observe(this, qs -> {
+            //swipeRefresh.setRefreshing(false);
+            questions = qs;
+            setRecyclerView(qs);
         });
 
     }
@@ -183,19 +150,6 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
         recyclerView.setAdapter(questionRecyclerAdapter);
         questionRecyclerAdapter.notifyDataSetChanged();
     }
-
-    private void filter(String text){
-        ArrayList<Post> filteredList = new ArrayList<>();
-
-        for(Post item: posts){
-            if (item.getTitle().toLowerCase().contains(text.toLowerCase())){
-                filteredList.add(item);
-            }
-        }
-
-      // questionRecyclerAdapter.filterList(filteredList);
-    }
-
 
     @Override
     public void onClick(View view, int position) {

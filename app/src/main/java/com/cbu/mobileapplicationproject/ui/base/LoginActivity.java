@@ -9,8 +9,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
-import com.cbu.mobileapplicationproject.R;
-import com.cbu.mobileapplicationproject.databinding.ActivityLandingBinding;
 import com.cbu.mobileapplicationproject.databinding.ActivityLoginBinding;
 
 import model.LoginViewModel;
@@ -36,9 +34,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 viewModel.LoginUser(viewBinding.loginTxtEmail.getText().toString(),viewBinding.loginTxtPassword.getText().toString(),LoginActivity.this);
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-                finish();
             }
         });
 
