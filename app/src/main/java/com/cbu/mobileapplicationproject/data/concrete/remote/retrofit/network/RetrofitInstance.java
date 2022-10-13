@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitInstance {
     private static Retrofit retrofit;
-    private static final String BASE_URL = "http://nadas.somee.com/api/";
+    private static final String BASE_URL = "http://10.138.133.194:5051/api/";
 
     public static Retrofit getRetrofitInstance() {
         Gson gson = new GsonBuilder()

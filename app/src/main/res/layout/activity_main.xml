@@ -52,12 +52,12 @@
             android:layout_height="36dp"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:layout_toStartOf="@+id/register_btn_account"
+            android:layout_toStartOf="@+id/btn_account"
             android:background="@drawable/ic_baseline_search_24"
             android:backgroundTint="@color/prime_dark_green" />
 
         <Button
-            android:id="@+id/register_btn_account"
+            android:id="@+id/btn_account"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_alignParentEnd="true"

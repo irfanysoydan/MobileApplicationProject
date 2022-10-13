@@ -24,6 +24,7 @@ import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
     private MainViewModel mainViewModel;
     private QuestionRecyclerAdapter questionRecyclerAdapter;
     private boolean doubleBackToExitPressedOnce = false;
-    private Button searchButton;
+    private Button searchButton, accountButton;
     private TextView projectName;
     private EditText editSearch;
     private SharedPreferences sp;
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 
         recyclerView = findViewById(R.id.recyclerview);
         projectName = (TextView) findViewById(R.id.txt_project);
+        accountButton=(Button)findViewById(R.id.btn_account);
         searchButton = (Button)findViewById(R.id.btn_search);
         editSearch = (EditText)findViewById(R.id.edittext_search);
         editSearch.setVisibility(View.INVISIBLE);
@@ -95,6 +97,16 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
             }
         });
 
+       accountButton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent = new Intent(MainActivity.this, AccountActivity.class);
+               startActivity(intent);
+           }
+       });
+
+
+
         viewBinding.mainBtnAddQuestion.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, PostingActivity.class);
             startActivity(intent);
@@ -103,14 +115,11 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
     }
     @Override
     protected void onResume() {
-
-
         sp=getSharedPreferences("Count",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=sp.edit();
         eski=sp.getInt("question_count",0);
 
         mainViewModel.getQuestionCount().observe(this, obj -> {
-
             yeni = (int)((double) obj);
             editor.putInt("question_count",yeni);
             editor.apply();
@@ -124,14 +133,11 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
                 eski=yeni;
                 notificationManager.notify(0, builder.build());
             }
-
         });
-
 
         super.onResume();
         getUserList();
     }
-
 
 
     public void getUserList() {
