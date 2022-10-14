@@ -21,13 +21,14 @@ public class AnswerRepository {
     private MutableLiveData<List<Answer>> mutableAnswersLiveData = new MutableLiveData<>();
     private MutableLiveData<Answer> mutableAnswerLiveData = new MutableLiveData<>();
     private Application application;
-
     public AnswerRepository(Application application) {
         this.application = application;
     }
+    IAnswerDataService answerDataService;
+
 
     public MutableLiveData<List<Answer>> getAllAnswerMutableLiveData(int id) {
-        IAnswerDataService answerDataService = RetrofitInstance.getRetrofitInstance().create(IAnswerDataService.class);
+        answerDataService = RetrofitInstance.getRetrofitInstance().create(IAnswerDataService.class);
         Call<List<Answer>> call = answerDataService.getAllByQuestionId(id);
         call.enqueue(new Callback<List<Answer>>() {
             @Override
@@ -46,7 +47,7 @@ public class AnswerRepository {
     }
 
     public MutableLiveData<Answer> createAnswerMutableLiveData(Answer answer) {
-        IAnswerDataService answerDataService = RetrofitInstance.getRetrofitInstance().create(IAnswerDataService.class);
+        answerDataService = RetrofitInstance.getRetrofitInstance().create(IAnswerDataService.class);
         Call<Answer> call = answerDataService.create(answer);
         call.enqueue(new Callback<Answer>() {
             @Override

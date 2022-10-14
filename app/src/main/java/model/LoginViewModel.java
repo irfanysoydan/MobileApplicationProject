@@ -24,6 +24,7 @@ import com.cbu.mobileapplicationproject.ui.base.LoginActivity;
 import com.cbu.mobileapplicationproject.ui.base.MainActivity;
 import com.cbu.mobileapplicationproject.ui.base.RegisterActivity;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.Gson;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -50,16 +51,8 @@ public class LoginViewModel extends AndroidViewModel {
                 if(user!=null)
                 {
                     Log.e("Login TEST", "onChanged: "+user.getMail() );
-                    editor.putInt("id",user.getId());
-                    editor.putString("creation_date",user.getCreationDate().toString());
-                    editor.putInt("created_user_id",user.getCreatedUserId());
-                    editor.putString("update_date",user.getUpdateDate().toString());
-                    editor.putInt("updated_user_id",user.getUpdatedUserId());
-                    editor.putBoolean("is_deleted",user.getIsDeleted());
-                    editor.putString("name",user.getName());
-                    editor.putString("surname",user.getSurname());
-                    editor.putString("email",user.getMail());
-                    editor.putString("password",user.getPassword());
+                    String string=new Gson().toJson(user);
+                    editor.putString("userJson",string);
                     editor.apply();
                     Intent intent = new Intent(context.getApplicationContext(), MainActivity.class);
                     context.startActivity(intent);
@@ -75,4 +68,6 @@ public class LoginViewModel extends AndroidViewModel {
         });
 
     }
+
+
 }

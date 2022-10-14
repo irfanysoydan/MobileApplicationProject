@@ -98,16 +98,16 @@
             android:id="@+id/checbox_remember"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/prime_dark_green"
-            android:layout_alignStart="@+id/login_txt_password"
             android:layout_below="@+id/login_txt_password"
+            android:layout_alignStart="@+id/login_txt_password"
             android:fontFamily="@font/poppins_light"
             android:gravity="center"
             android:paddingTop="2dp"
-            android:textSize="17dp"
             android:scaleX=".8"
             android:scaleY=".8"
-            android:text="Beni Hatırla" />
+            android:text="Beni Hatırla"
+            android:textColor="@color/prime_dark_green"
+            android:textSize="17dp" />
 
         <TextView
             android:id="@+id/txt_login3"

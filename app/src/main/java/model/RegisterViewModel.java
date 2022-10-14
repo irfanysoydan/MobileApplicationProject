@@ -36,14 +36,19 @@ public class RegisterViewModel extends ViewModel {
         userDataService.create(new User(name,surname,mail,password)).enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
-                Log.e("id yazdim", ""+response.body().getId() );
-                Intent intent = new Intent(context, LoginActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
+                if(response.body()!=null)
+                {
+                    Log.e("id yazdim", ""+response.body().getId() );
+                    Intent intent = new Intent(context, LoginActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(intent);
+                }
+                else
+                Toast.makeText(context, "Email kullanılıyor", Toast.LENGTH_LONG).show();
             }
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-                Log.e("Hata mesaji", t.toString() );
+                Log.e("Kayıt gerçekleşmedi", t.toString() );
             }
         });
 

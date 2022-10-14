@@ -33,10 +33,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cbu.mobileapplicationproject.entities.concrete.Question;
+import com.cbu.mobileapplicationproject.entities.concrete.User;
 import com.cbu.mobileapplicationproject.ui.adapter.ItemClickListener;
 import com.cbu.mobileapplicationproject.R;
 import com.cbu.mobileapplicationproject.databinding.ActivityMainBinding;
 import com.cbu.mobileapplicationproject.ui.adapter.QuestionRecyclerAdapter;
+import com.cbu.mobileapplicationproject.utilities.SPHelper;
+import com.google.gson.Gson;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -47,6 +50,7 @@ import model.MainViewModel;
 public class MainActivity extends AppCompatActivity implements ItemClickListener {
 
     private List<Question> questions;
+    private SPHelper spHelper;
     private RecyclerView recyclerView;
     private MainViewModel mainViewModel;
     private QuestionRecyclerAdapter questionRecyclerAdapter;
@@ -71,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
+        Log.e("context",getApplicationContext().toString());
        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "Update";
             String description = "New questions";
@@ -87,9 +92,9 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
             @Override
             public void onClick(View view) {
                 sp=getApplicationContext().getSharedPreferences("MyUserPrefs",Context.MODE_PRIVATE);
-                int a=sp.getInt("id",0);
-                Log.e("kullanici id", ""+a);
-                Log.e("kullanici adi soyadi",sp.getString("name","")+" "+(sp.getString("surname","")));
+                User user=new Gson().fromJson(sp.getString("userJson",""), User.class);
+                Log.e("kullanici id", ""+user.getId());
+                Log.e("kullanici adi soyadi",user.getName()+" "+user.getSurname());
                 projectName.setVisibility(view.GONE);
                 editSearch.setVisibility(View.VISIBLE);
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
